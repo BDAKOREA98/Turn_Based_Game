@@ -31,6 +31,19 @@ public class Distance : MonoBehaviour
 
     }
 
+    public bool EvaluateDistance(BattleHex initialHex)
+    {
+        return distanceFromStartingPoint + stepsToGo ==
+            initialHex.distanceText.distanceFromStartingPoint;
+    }
+    public int MakeMePartOfOptimalPath()
+    {
+        OptimalPath.optimalPath.Add(hex);
+        hex.Landscape.color = new Color32(150, 150, 150, 255);
+        return stepsToGo;
+
+    }
+
 
     
     

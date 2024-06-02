@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    public int velocity = 2;
+    public int velocity = 5;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    
+
 }

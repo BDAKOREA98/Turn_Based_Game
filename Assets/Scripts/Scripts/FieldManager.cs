@@ -57,18 +57,18 @@ public class FieldManager : MonoBehaviour
     private void IdentifyHexes()//highligths inactive and sets new value to active hexes
     {
         //compares coordinates of a hex with the distance from the center (0, 0, z)
-     foreach (BattleHex hex in allHexesArray)
-        {
-            if (Mathf.Abs(hex.transform.position.x) < 10.0f |
-                Mathf.Abs(hex.transform.position.y) < 9.0f)
-            {
-                hex.MakeMeInActive();
-            }
-            else
-            {
-                hex.MakeMeActive();
-            }
-        }
+     //foreach (BattleHex hex in allHexesArray)
+     //   {
+     //       if (Mathf.Abs(hex.transform.position.x) < 16.0f |
+     //           Mathf.Abs(hex.transform.position.y) < 8.0f)
+     //       {
+     //           hex.MakeMeInActive();
+     //       }
+     //       else
+     //       {
+     //           hex.MakeMeActive();
+     //       }
+     //   }
         CreateActiveHexList();
     }
     //creates list filled with active hexes

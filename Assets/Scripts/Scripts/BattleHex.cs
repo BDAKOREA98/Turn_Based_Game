@@ -54,7 +54,9 @@ public class BattleHex : MonoBehaviour
     }
     public virtual void MakeMeTargetToMove()//defines a hex as selected position
     {
-        clickOnMe.isTargetHex = true;
+        clickOnMe.isTargetToMove = true;
+        BattleController.targetToMove = this;
+
         currentState.sprite = clickOnMe.fieldManager.availableAsTarget;//sets the green frame to a hex
     }
     public void DefineMeAsStartingHex()

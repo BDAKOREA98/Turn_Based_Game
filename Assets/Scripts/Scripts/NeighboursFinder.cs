@@ -13,7 +13,7 @@ public class NeighboursFinder : MonoBehaviour
     {
       
     }
-    static public List<BattleHex> GetAdjacentHexes(BattleHex startingHex)//Looks for and returns neighbouring hexes
+    static public List<BattleHex> GetAdjacentHexes(BattleHex startingHex, IEvaluateHex checkHex)//Looks for and returns neighbouring hexes
     {
         allNeighbours.Clear();
 
@@ -26,21 +26,16 @@ public class NeighboursFinder : MonoBehaviour
             for (int y = -1; y <= 1; y++)
             {
                 if (x + y != 0 //exclude two hexes that are not adjacent hexes
-                     && EvaluateIfItIsNewHex(FieldManager.allHexesArray[initialX + x, initialY + y])) //exclude inactive hexes                       
+                     && checkHex.EvaluateHex(FieldManager.allHexesArray[initialX + x, initialY + y])) //exclude inactive hexes                       
                 {
                     allNeighbours.Add(FieldManager.allHexesArray[initialX + x, initialY + y]);
-                    FieldManager.allHexesArray[initialX + x, initialY + y].MakeMeAvailable();
+                   
+                    
                 }
             }
         }
         return allNeighbours;
     }
-   //evaluates the state of a hex (active, included and neighbouring)
-    private static bool EvaluateIfItIsNewHex(BattleHex evaluatedHex)
-    {
-        return evaluatedHex.battleHexState
-                            == HexState.active
-                            && !evaluatedHex.isStartingHex
-                            && !evaluatedHex.isNeighboringHex;
-    }
+   
+    
 }
