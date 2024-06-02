@@ -100,7 +100,7 @@ MonoBehaviour:
   Landscape: {fileID: 8434018787174728638}
   distanceText: {fileID: 2971426209268420073}
   deploymentPos: {fileID: 2777346652991776380}
-  currentState: {fileID: 9178520568704629054, guid: a6249ecc5b001a541b8ad17880b7b2b8, type: 3}
+  currentState: {fileID: 3836768796039127309}
   isStartingHex: 0
   isNeighboringHex: 0
   isIncluded: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4043c5ff3f524a40850616cabac60c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetHex: 0
+  isTargetToMove: 0
   fieldManager: {fileID: 0}
 --- !u!1 &5162809251990262767
 GameObject:
@@ -227,6 +227,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fabe9e1860d4186438768abf0c952c6b, type: 3}
+--- !u!114 &3836768796039127309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1281273280987583813, guid: fabe9e1860d4186438768abf0c952c6b, type: 3}
+  m_PrefabInstance: {fileID: 2664177863967765576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8112144930098159372 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6083570845244812100, guid: fabe9e1860d4186438768abf0c952c6b, type: 3}

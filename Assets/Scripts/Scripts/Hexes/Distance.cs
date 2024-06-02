@@ -10,9 +10,6 @@ public class Distance : MonoBehaviour
     Text distanceText;
 
 
-
-
-
     void Start()
     {
 
@@ -21,15 +18,30 @@ public class Distance : MonoBehaviour
 
 
     }
-    public void SetDistanceFromStartingHex(BattleHex initialHex)
+    public void SetDistanceForGroundUnit(BattleHex initialHex)
     {
         distanceFromStartingPoint = initialHex.distanceText.distanceFromStartingPoint 
             + initialHex.distanceText.stepsToGo;
+
+
+        DisplayDistanceText();
+    }
+    public void SetDistanceForFlyingUnit(BattleHex initialHex)
+    {
+        distanceFromStartingPoint = initialHex.distanceText.distanceFromStartingPoint + 1;
+            
+
+
+        DisplayDistanceText();
+    }
+
+
+    private void DisplayDistanceText()
+    {
         distanceText.text = distanceFromStartingPoint.ToString();
         distanceText.color = new Color32(255, 255, 255, 255);
 
-
-    }
+    }    
 
     public bool EvaluateDistance(BattleHex initialHex)
     {
@@ -41,6 +53,19 @@ public class Distance : MonoBehaviour
         OptimalPath.optimalPath.Add(hex);
         hex.Landscape.color = new Color32(150, 150, 150, 255);
         return stepsToGo;
+
+    }
+
+    public bool EvaluateDistanceForGround(BattleHex initialHex)
+    {
+        int currentDistance = initialHex.distanceText.distanceFromStartingPoint
+                                    + initialHex.distanceText.stepsToGo;
+
+        int stepsLimit = BattleController.currentAtacker.velocity;
+
+        return distanceFromStartingPoint > currentDistance &&
+            stepsLimit >= currentDistance;
+
 
     }
 

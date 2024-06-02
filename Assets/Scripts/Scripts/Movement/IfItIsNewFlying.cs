@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IfItIsNewHex : MonoBehaviour, IEvaluateHex
+public class IfItIsNewFlying : MonoBehaviour, IEvaluateHex
 {
     public bool EvaluateHex(BattleHex evaluatedHex)
     {

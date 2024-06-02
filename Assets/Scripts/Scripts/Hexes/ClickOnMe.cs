@@ -48,6 +48,9 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
                 hex.GetComponent<ClickOnMe>().isTargetToMove = false;//overrides boolean
                 hex.MakeMeAvailable();// sets white frame
             }
+
+            hex.Landscape.color = new Color32(250, 250, 250, 250);
+
         }
     }
 }

@@ -12,4 +12,10 @@ public class Mountains : BattleHex
     {
         currentState.color = new Color32(255, 255, 255, 0);
     }
+
+    public override bool AvailableToGround()
+    {
+        return false;
+    }
+
 }
