@@ -26,7 +26,7 @@ public class FieldManager : MonoBehaviour
     {
         IdentifyHexes();
         AvailablePos hero = FindObjectOfType<AvailablePos>();
-        IAdjacentFinder adjFinder = new PositionsForFlying();
+        IAdjacentFinder adjFinder = new PositionsForGround();
         BattleHex startingHex = hero.GetComponentInParent<BattleHex>();
         int stepsLimit = BattleController.currentAtacker.velocity;
         startingHex.DefineMeAsStartingHex();
