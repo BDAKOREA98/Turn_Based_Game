@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : MonoBehaviour
+public abstract class Hero : MonoBehaviour
 {
     public int velocity = 5;
-    
 
 
+    public abstract void DealsDamage(BattleHex target);
     
 
 }

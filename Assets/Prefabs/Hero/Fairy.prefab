@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7021879187153841050}
   - component: {fileID: 7152120496386105195}
   - component: {fileID: 5040478733941216655}
-  - component: {fileID: -5308060085776422788}
   - component: {fileID: 2802026744527882102}
   - component: {fileID: 3297781385729003252}
+  - component: {fileID: 7291936193670937137}
   m_Layer: 5
   m_Name: Fairy
   m_TagString: Untagged
@@ -104,19 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd2f4d73e4df694080dd3dacb931bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5308060085776422788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6124651517502191076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09ebed54217a0841bda2bf941788af0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 5
 --- !u!114 &2802026744527882102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +131,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 1
   path: []
+--- !u!114 &7291936193670937137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124651517502191076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d933caea69cb54641810c7c1923e68c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 5
