@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7152120496386105195}
   - component: {fileID: 5040478733941216655}
   - component: {fileID: 1959428236}
-  - component: {fileID: 3287295752479269163}
-  - component: {fileID: 6225028731339227404}
-  - component: {fileID: 1388828620300419903}
+  - component: {fileID: 3954258335921535168}
+  - component: {fileID: 3656762242296260322}
+  - component: {fileID: 2647357602015530265}
   m_Layer: 5
-  m_Name: Fairy
+  m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: f4aac78a9992af94ebf9c0b867183581, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 3361c58d9e5019e4ba31fecd30dfb76e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +115,7 @@ Animator:
   m_GameObject: {fileID: 6124651517502191076}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 91d48946e6baccc4bafc3a1cf04fb426, type: 2}
+  m_Controller: {fileID: 9100000, guid: 689134386ef28d841b08d43bba3ecb9f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -126,7 +126,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3287295752479269163
+--- !u!114 &3954258335921535168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 0
   path: []
---- !u!114 &6225028731339227404
+--- !u!114 &3656762242296260322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landscapes: []
---- !u!114 &1388828620300419903
+--- !u!114 &2647357602015530265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6124651517502191076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d933caea69cb54641810c7c1923e68c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 535743cc3d1352c49a83e96f47e8dab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
