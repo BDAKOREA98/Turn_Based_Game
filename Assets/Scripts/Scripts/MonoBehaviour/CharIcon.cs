@@ -14,7 +14,12 @@ public class CharIcon : MonoBehaviour
     internal bool deployed = false;
 
 
+    StorageMNG storage;
 
+    private void Start()
+    {
+        storage = GetComponentInParent<StorageMNG>();
+    }
 
 
     internal void FillIcon()
@@ -28,7 +33,7 @@ public class CharIcon : MonoBehaviour
 
     public void IconClicked()
     {
-            StorageMNG storage = GetComponentInParent<StorageMNG>();
+            
         if (!deployed)
         {
             storage.TintIcon(this);
@@ -39,7 +44,12 @@ public class CharIcon : MonoBehaviour
         }
 
 
+    }
 
+    public void HeroIsDeployed()
+    {
+        backGround.sprite = storage.deployedRegiment;
+        deployed = true;
     }
 
 }

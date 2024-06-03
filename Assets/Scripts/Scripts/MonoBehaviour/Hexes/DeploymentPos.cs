@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class DeploymentPos : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool positionForRegiment;
+
+
+
+
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void OnMouseDown()
     {
-        
+        BattleHex parentHex = GetComponentInParent<BattleHex>();
+
+        if(Deployer.readyForDeploymentIcon != null && positionForRegiment)
+        {
+            Deployer.DeployRegiment(parentHex);
+        }
+
     }
+
+
 }

@@ -99,7 +99,7 @@ MonoBehaviour:
   clickOnMe: {fileID: 0}
   Landscape: {fileID: 8434018787174728638}
   distanceText: {fileID: 532484308014200124}
-  deploymentPos: {fileID: 0}
+  deploymentPos: {fileID: 1387830602878531169}
   currentState: {fileID: 5356599761894363013}
   isStartingHex: 0
   isNeighboringHex: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4043c5ff3f524a40850616cabac60c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTargetHex: 0
+  isTargetToMove: 0
   fieldManager: {fileID: 0}
 --- !u!1 &5162809251990262767
 GameObject:
@@ -536,19 +536,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmyPos
       objectReference: {fileID: 0}
-    - target: {fileID: 9178520568704629054, guid: a6249ecc5b001a541b8ad17880b7b2b8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6bc320fcb0214f14da523902b65a34c5, type: 3}
-    - target: {fileID: 9178520568704629054, guid: a6249ecc5b001a541b8ad17880b7b2b8, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6249ecc5b001a541b8ad17880b7b2b8, type: 3}
+--- !u!114 &1387830602878531169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1528622264390253316, guid: a6249ecc5b001a541b8ad17880b7b2b8, type: 3}
+  m_PrefabInstance: {fileID: 8758285983297417885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e292c95dd8bc91443a6f2a9c0fa83b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7642329096657024037 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1406441812065126072, guid: a6249ecc5b001a541b8ad17880b7b2b8, type: 3}

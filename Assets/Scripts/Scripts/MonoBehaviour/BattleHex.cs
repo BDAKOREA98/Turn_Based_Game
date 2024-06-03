@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -72,6 +73,18 @@ public class BattleHex : MonoBehaviour
         return true;
     }
 
+    public void MakeMeDeploymentPosition()
+    {
+        deploymentPos.GetComponent<PolygonCollider2D>().enabled = true;
+        deploymentPos.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+
+    }
+
+    public void CleanUpDeploymentPosition()
+    {
+        deploymentPos.GetComponent<PolygonCollider2D>().enabled = false;
+        deploymentPos.GetComponent<Image>().color = new Color32(255, 255, 255, 0);
+    }
 
 
 

@@ -57,9 +57,9 @@ public class StorageMNG : MonoBehaviour
 
         }
 
-
-
         clickedIcon.backGround.sprite = selectedIcon;
+        Deployer.readyForDeploymentIcon = clickedIcon;
+
 
     }
 
