@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,28 +20,35 @@ public class CharIcon : MonoBehaviour
     private void Start()
     {
         storage = GetComponentInParent<StorageMNG>();
+        StorageMNG.OnRemoveHero += ReturnDefaultState;
+
     }
 
+    
 
     internal void FillIcon()
     {
         heroImage.sprite = charAttributes.heroSprite;
         stackText = GetComponentInChildren<TMPro.TextMeshProUGUI>();
-        
 
+        
         stackText.text = charAttributes.stack.ToString();
     }
 
     public void IconClicked()
     {
-            
+        StorageMNG storage = GetComponentInParent<StorageMNG>();
+        
+        Debug.Log(storage);
+          
         if (!deployed)
         {
             storage.TintIcon(this);
         }
-        else
+        else 
         {
-            storage.ReturnRegiment(this);
+            storage.RemoveHeroUsingObserver(charAttributes);
+           // storage.ReturnRegiment(this);
         }
 
 
@@ -51,5 +59,16 @@ public class CharIcon : MonoBehaviour
         backGround.sprite = storage.deployedRegiment;
         deployed = true;
     }
+
+    public void ReturnDefaultState(CharAttributes selectedCharAttributes)
+    {
+        if (selectedCharAttributes == charAttributes)
+        {
+            backGround.sprite = GetComponentInParent<StorageMNG>().defaultIcon;
+
+            deployed = false;
+        }
+    }
+
 
 }

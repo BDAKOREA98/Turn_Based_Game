@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class StorageMNG : MonoBehaviour
     [SerializeField] internal Sprite selectedIcon;
     [SerializeField] internal Sprite defaultIcon;
     [SerializeField] internal Sprite deployedRegiment;
+
+    public static event Action<CharAttributes> OnRemoveHero;
 
 
 
@@ -66,8 +69,42 @@ public class StorageMNG : MonoBehaviour
     internal void ReturnRegiment(CharIcon clickedIcon)
     {
 
+        CharAttributes SOofRegiment = clickedIcon.charAttributes;
+
+        Hero[] regimentsOnBattleField = FindObjectsOfType<Hero>();
+        
+
+
+
+
+        foreach (Hero hero in regimentsOnBattleField)
+        {
+            if (hero.heroData == SOofRegiment)
+            {
+                RemoveHero(hero);
+                
+                break;
+            }
+
+
+        }
+
     }
 
+    private void RemoveHero(Hero hero)
+    {
+        BattleHex parentHex = hero.GetComponentInParent<BattleHex>();
+        parentHex.MakeMeDeploymentPosition();
+
+        Destroy(hero.gameObject);
+
+    }
+
+
+    public void RemoveHeroUsingObserver(CharAttributes SOHero)
+    {
+        OnRemoveHero(SOHero);
+    }
 
 
 }

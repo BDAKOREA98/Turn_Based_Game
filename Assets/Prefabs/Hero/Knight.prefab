@@ -166,3 +166,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
+  heroData: {fileID: 11400000, guid: 6b7f780cda879714b8e10235c5226c9c, type: 2}
