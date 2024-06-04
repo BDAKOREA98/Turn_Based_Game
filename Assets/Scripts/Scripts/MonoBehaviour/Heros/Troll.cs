@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : Hero
+public class Troll : Hero
 {
     public override void DealsDamage(BattleHex target)
     {

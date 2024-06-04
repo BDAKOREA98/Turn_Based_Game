@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
-  m_Name: Troll
+  m_Name: Troll 2
   m_EditorClassIdentifier: 
   velocity: 0
   initiative: 0
   hp: 0
   atack: 0
   resistance: 0
-  stack: 30
+  stack: 60
   heroSprite: {fileID: 21300000, guid: 63a254db3e58ccc4b900be2d86e69868, type: 3}
   heroSO: {fileID: 8366067277467125816, guid: d8c6295775c851641b157694870bf0d5, type: 3}

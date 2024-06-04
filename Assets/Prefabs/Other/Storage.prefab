@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 2247734441367986842}
   - component: {fileID: 2247734441367986843}
   - component: {fileID: 3863839467406804902}
-  - component: {fileID: 6046263892489155736}
   m_Layer: 5
   m_Name: Storage
   m_TagString: Untagged
@@ -216,18 +215,6 @@ MonoBehaviour:
   selectedIcon: {fileID: 21300000, guid: dd06b9c97998f644da52be6eb1f14cb3, type: 3}
   defaultIcon: {fileID: 21300000, guid: 1b694c1bfcf15314d933f852422b92ef, type: 3}
   deployedRegiment: {fileID: 21300000, guid: 421d598e3e8dd8c449fbd86303000ca5, type: 3}
---- !u!114 &6046263892489155736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2247734441367986841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a646ba9cfabb8409a8fd55dc51a416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2247734441659333479
 GameObject:
   m_ObjectHideFlags: 0
