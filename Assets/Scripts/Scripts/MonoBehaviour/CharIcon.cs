@@ -20,7 +20,7 @@ public class CharIcon : MonoBehaviour
     private void Start()
     {
         storage = GetComponentInParent<StorageMNG>();
-        StorageMNG.OnRemoveHero += ReturnDefaultState;
+        StorageMNG.OnClickOnGrayIcon += ReturnDefaultState;
 
     }
 
@@ -47,7 +47,7 @@ public class CharIcon : MonoBehaviour
         }
         else 
         {
-            storage.RemoveHeroUsingObserver(charAttributes);
+            storage.RemoveRegiment(charAttributes);
            // storage.ReturnRegiment(this);
         }
 

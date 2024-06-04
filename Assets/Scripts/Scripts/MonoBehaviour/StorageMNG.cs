@@ -15,8 +15,8 @@ public class StorageMNG : MonoBehaviour
     [SerializeField] internal Sprite deployedRegiment;
 
     public static event Action<CharAttributes> OnRemoveHero;
-
-
+    public delegate void DeleteHero(CharAttributes SOofHero);
+    public static event DeleteHero OnClickOnGrayIcon;
 
 
 
@@ -66,30 +66,7 @@ public class StorageMNG : MonoBehaviour
 
     }
 
-    internal void ReturnRegiment(CharIcon clickedIcon)
-    {
 
-        CharAttributes SOofRegiment = clickedIcon.charAttributes;
-
-        Hero[] regimentsOnBattleField = FindObjectsOfType<Hero>();
-        
-
-
-
-
-        foreach (Hero hero in regimentsOnBattleField)
-        {
-            if (hero.heroData == SOofRegiment)
-            {
-                RemoveHero(hero);
-                
-                break;
-            }
-
-
-        }
-
-    }
 
     private void RemoveHero(Hero hero)
     {
@@ -101,10 +78,30 @@ public class StorageMNG : MonoBehaviour
     }
 
 
-    public void RemoveHeroUsingObserver(CharAttributes SOHero)
+    public void RemoveRegiment(CharAttributes SOHero)
     {
-        OnRemoveHero(SOHero);
+        OnClickOnGrayIcon(SOHero);
     }
 
+    //internal void ReturnRegiment(CharIcon clickedIcon)
+    //{
+
+    //    CharAttributes SOofRegiment = clickedIcon.charAttributes;
+
+    //    Hero[] regimentsOnBattleField = FindObjectsOfType<Hero>();
+
+    //    foreach (Hero hero in regimentsOnBattleField)
+    //    {
+    //        if (hero.heroData == SOofRegiment)
+    //        {
+    //            RemoveHero(hero);
+
+    //            break;
+    //        }
+
+
+    //    }
+
+    //}
 
 }

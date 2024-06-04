@@ -32,7 +32,7 @@ public class Deployer : MonoBehaviour
     {
         foreach (BattleHex hex in FieldManager.allHexesArray)
         {
-            if (hex.deploymentPos.positionForRegiment)
+            if (hex.deploymentPos.regimentPosition == PositionForRegiment.PLAYER)
             {
                 hex.MakeMeDeploymentPosition();
 

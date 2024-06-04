@@ -10,7 +10,7 @@ public abstract class Hero : MonoBehaviour
 
     private void Start()
     {
-        StorageMNG.OnRemoveHero += DestroyMe;
+        StorageMNG.OnClickOnGrayIcon += DestroyMe;
     }
 
     public abstract void DealsDamage(BattleHex target);
@@ -26,5 +26,12 @@ public abstract class Hero : MonoBehaviour
         }
 
     }
+
+
+    private void OnDisable()
+    {
+        StorageMNG.OnClickOnGrayIcon -= DestroyMe;
+    }
+
 
 }

@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+public enum PositionForRegiment { NONE, PLAYER, ENEMY};
+
+
 public class DeploymentPos : MonoBehaviour
 {
-    public bool positionForRegiment;
+    
 
-
+    public PositionForRegiment regimentPosition;
+    
 
 
 
@@ -20,7 +26,7 @@ public class DeploymentPos : MonoBehaviour
     {
         BattleHex parentHex = GetComponentInParent<BattleHex>();
 
-        if(Deployer.readyForDeploymentIcon != null && positionForRegiment)
+        if(Deployer.readyForDeploymentIcon != null && regimentPosition == PositionForRegiment.PLAYER)
         {
             Deployer.DeployRegiment(parentHex);
         }
