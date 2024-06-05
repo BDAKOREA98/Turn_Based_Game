@@ -17,6 +17,7 @@ public class StorageMNG : MonoBehaviour
     public static event Action<CharAttributes> OnRemoveHero;
     public delegate void DeleteHero(CharAttributes SOofHero);
     public static event DeleteHero OnClickOnGrayIcon;
+    public CharIcon[] charIcons;
 
 
 
@@ -24,6 +25,9 @@ public class StorageMNG : MonoBehaviour
     {
         scrollRect = GetComponent<ScrollRect>();
         CallHeroIcons();
+
+        StartBTN.OnStartingBattle += DisableMe;
+        charIcons = GetComponentsInChildren<CharIcon>();
     }
 
     private void CallHeroIcons()
@@ -82,6 +86,12 @@ public class StorageMNG : MonoBehaviour
     {
         OnClickOnGrayIcon(SOHero);
     }
+
+    private void DisableMe()
+    {
+        gameObject.SetActive(false); 
+    }
+
 
     //internal void ReturnRegiment(CharIcon clickedIcon)
     //{

@@ -12,7 +12,7 @@ public class Deployer : MonoBehaviour
     public static CharIcon readyForDeploymentIcon;
     List<BattleHex> enemiesPositions = new List<BattleHex>();
     List<CharAttributes> enemiesToDeploy = new List<CharAttributes>();
-    StorageMNG storage;
+    static StorageMNG storage;
     int enemiesNum;
 
 
@@ -38,7 +38,7 @@ public class Deployer : MonoBehaviour
         readyForDeploymentIcon.HeroIsDeployed();
         readyForDeploymentIcon = null;
 
-
+        storage.GetComponent<StartBTN>().ControlStartBTN();
 
     }    
 

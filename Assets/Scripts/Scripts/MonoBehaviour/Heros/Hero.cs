@@ -6,11 +6,12 @@ public abstract class Hero : MonoBehaviour
 {
     public int velocity = 5;
     public CharAttributes heroData;
-
+    StartBTN startBTN;
 
     private void Start()
     {
         StorageMNG.OnClickOnGrayIcon += DestroyMe;
+        startBTN = FindObjectOfType<StartBTN>();
     }
 
     public abstract void DealsDamage(BattleHex target);
@@ -22,6 +23,7 @@ public abstract class Hero : MonoBehaviour
 
             BattleHex parentHex = GetComponentInParent<BattleHex>();
             parentHex.MakeMeDeploymentPosition();
+            startBTN.ControlStartBTN();
             Destroy(gameObject);
         }
 

@@ -12,25 +12,34 @@ public class DeploymentPos : MonoBehaviour
     
 
     public PositionForRegiment regimentPosition;
-    
 
+    BattleHex parentHex;
+
+   
 
 
     private void Start()
     {
-        
+        parentHex = GetComponentInParent<BattleHex>();
+        StartBTN.OnStartingBattle += DisableMe;
+
     }
 
 
     public void OnMouseDown()
     {
-        BattleHex parentHex = GetComponentInParent<BattleHex>();
+        
 
         if(Deployer.readyForDeploymentIcon != null && regimentPosition == PositionForRegiment.PLAYER)
         {
             Deployer.DeployRegiment(parentHex);
         }
 
+    }
+
+    void DisableMe()
+    {
+        parentHex.CleanUpDeploymentPosition();
     }
 
 

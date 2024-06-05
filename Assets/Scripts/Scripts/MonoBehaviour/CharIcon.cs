@@ -39,7 +39,7 @@ public class CharIcon : MonoBehaviour
     {
         StorageMNG storage = GetComponentInParent<StorageMNG>();
         
-        Debug.Log(storage);
+        
           
         if (!deployed)
         {
