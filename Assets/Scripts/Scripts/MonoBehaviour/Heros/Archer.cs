@@ -14,4 +14,9 @@ public class Archer : Hero
         IAdjacentFinder adjFinder = new PositionsForGround();
         return adjFinder;
     }
+    public override void DefineTargets()
+    {
+        IDefineTarget wayToLookForTargets = new TargetPlayerRange();
+        wayToLookForTargets.DefineTargets(this);
+    }
 }

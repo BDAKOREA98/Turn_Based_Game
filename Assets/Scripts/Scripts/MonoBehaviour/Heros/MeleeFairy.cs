@@ -8,6 +8,11 @@ public class MeleeFairy : Hero
     {
         
     }
+    public override void DefineTargets()
+    {
+        IDefineTarget wayToLookForTargets = new TargetPlayerMelee();
+        wayToLookForTargets.DefineTargets(this);
+    }
     public override IAdjacentFinder GetTypeOfHero()
     {
         IAdjacentFinder adjFinder = new PositionsForFlying();

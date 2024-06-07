@@ -39,6 +39,7 @@ public abstract class Hero : MonoBehaviour
     }
 
     public abstract IAdjacentFinder GetTypeOfHero();
+    public abstract void DefineTargets();
 
 
 }

@@ -15,13 +15,14 @@ public class Move : MonoBehaviour
     
     internal bool lookingToTheRight = true;
     SpriteRenderer heroSprite;
-
+    BattleController battleController;
 
 
     private void Start()
     {
         hero = GetComponent<Hero>();
         heroSprite = GetComponent<SpriteRenderer>();
+        battleController = FindObjectOfType<BattleController>();    
     }
 
     private void Update()
@@ -34,6 +35,8 @@ public class Move : MonoBehaviour
 
     public void StartMoving()
     {
+
+        battleController.CleanField();
         currentStep = 0;
         totalSteps = path.Count - 1;
 
@@ -42,6 +45,8 @@ public class Move : MonoBehaviour
         ResetTargetPos();
 
     }
+    
+
 
     private void ResetTargetPos()
     {
@@ -85,17 +90,20 @@ public class Move : MonoBehaviour
     private void StopsMoving()
     {
         isMoving = !isMoving;
+        transform.parent = path[currentStep].transform;
         hero.GetComponent<Animator>().SetBool("IsMoving", false);
+        hero.DefineTargets();
+
+
     }
     internal void ControlDirection(Vector3 targetPos)
     {
-        //compares the coordinates of the hero and the coordinates of the target hex
-        //rotates the hero if necessary
+        
         if (transform.position.x > targetPos.x && lookingToTheRight ||
             transform.position.x < targetPos.x && !lookingToTheRight)
         {
-            heroSprite.flipX = !heroSprite.flipX;//rotates a sprite of the hero
-            lookingToTheRight = !lookingToTheRight;//sets the opposite value for a variable
+            heroSprite.flipX = !heroSprite.flipX;
+            lookingToTheRight = !lookingToTheRight;
         }
     }
 

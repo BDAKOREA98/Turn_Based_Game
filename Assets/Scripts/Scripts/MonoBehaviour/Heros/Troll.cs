@@ -13,4 +13,9 @@ public class Troll : Hero
         IAdjacentFinder adjFinder = new PositionsForGround();
         return adjFinder;
     }
+    public override void DefineTargets()
+    {
+        IDefineTarget wayToLookForTargets = new TargetPlayerMelee();
+        wayToLookForTargets.DefineTargets(this);
+    }
 }

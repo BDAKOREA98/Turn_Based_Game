@@ -22,6 +22,8 @@ public class Turn : MonoBehaviour
         
         currentAttacker.GetComponent<AvailablePos>().GetAvailablePositions(GetStartingHex(),
                                                      stepsLimit, adjFinder);
+
+        currentAttacker.DefineTargets();
     }
     
     private BattleHex GetStartingHex()

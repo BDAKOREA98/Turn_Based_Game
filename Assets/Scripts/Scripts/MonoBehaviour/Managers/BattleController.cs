@@ -23,7 +23,14 @@ public class BattleController : MonoBehaviour
      
         currentAttacker = allFighters[0];
 
-        
+    }
+
+    public void CleanField()
+    {
+        foreach (BattleHex hex in FieldManager.activeHexList)
+        {
+            hex.SetDefaultValue();
+        }
     }
 
 }

@@ -17,8 +17,9 @@ public class BattleHex : MonoBehaviour
     public DeploymentPos deploymentPos;
     [SerializeField] protected Image currentState;
     public bool isStartingHex = false;
-    public bool isNeighboringHex = false;//helps to define a hex as neighbouring to evaluated
-    public bool isIncluded = false;//helps to define a hex as available position
+    public bool isNeighboringHex = false;
+    public bool isIncluded = false;
+    public bool potencialTarget;
 
     private void Awake()
     {
@@ -86,6 +87,24 @@ public class BattleHex : MonoBehaviour
         deploymentPos.GetComponent<Image>().color = new Color32(255, 255, 255, 0);
     }
 
+    internal void DefineMeAsPotencialTarget()
+    {
+        currentState.color = new Color(255, 0, 0, 255);
+        potencialTarget = true;
+
+    }
+
+    public void SetDefaultValue()
+    {
+        isStartingHex = false;
+        isNeighboringHex = false;
+        isIncluded = false;
+        distanceText.GetComponent<Text>().color = new Color32(255, 255, 255, 0);
+        currentState.color = new Color32(255, 255, 255, 0);
+        Landscape.color = new Color32(255, 255, 255, 255);
+        //distanceText.stepsToGoCurrent
+
+    }
 
 
 }

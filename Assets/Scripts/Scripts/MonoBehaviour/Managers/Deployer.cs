@@ -95,6 +95,9 @@ public class Deployer : MonoBehaviour
     private void InstantiateEnemy(CharAttributes charAttributes, Image hexPosition)
     {
         Hero enemy = Instantiate(charAttributes.heroSO, hexPosition.transform);
+
+        enemy.gameObject.AddComponent<Enemy>();
+
     }
 
 
