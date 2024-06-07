@@ -1,20 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BattleController : MonoBehaviour
 {
-
     public static BattleHex targetToMove;
-    public static Hero currentAtacker;
+    public static Hero currentAttacker;
+    List<Hero> allFighters = new List<Hero>(); 
 
-
-    void Awake()
+    
+    public List<Hero> DefineAllFighters()
     {
-        currentAtacker = FindObjectOfType<Hero>();
+        allFighters = FindObjectsOfType<Hero>().ToList();
+        return allFighters;
     }
+    public void DefineNewAtacker()
+    {
+     
+        List<Hero> allFighters = DefineAllFighters().
+                                 OrderByDescending(hero => hero.heroData.CurrentInitiative).ToList();
+     
+        currentAttacker = allFighters[0];
 
-
-   
+        
+    }
 
 }

@@ -6,6 +6,11 @@ public class MeleeFairy : Hero
 {
     public override void DealsDamage(BattleHex target)
     {
-        throw new System.NotImplementedException();
+        
+    }
+    public override IAdjacentFinder GetTypeOfHero()
+    {
+        IAdjacentFinder adjFinder = new PositionsForFlying();
+        return adjFinder;
     }
 }

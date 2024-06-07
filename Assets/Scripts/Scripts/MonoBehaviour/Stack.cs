@@ -7,25 +7,9 @@ using UnityEngine;
 public class Stack : MonoBehaviour
 {
     Hero parentHero;
-    private TextMeshProUGUI stackText;
-    private int _stack;
-    internal int currentStack
-    {
-        get { return _stack; }
-        set
-        {
-            if (value > 0)
-            {
-                _stack = value;
-            }
-            else
-            {
-                _stack = 0;
-            }
-        }
-    }
-
-    private void Start()
+    private TextMeshProUGUI stackText; 
+    private int stack;
+    void Start()
     {
         parentHero = GetComponentInParent<Hero>();
         stackText = GetComponent<TextMeshProUGUI>();
@@ -34,8 +18,9 @@ public class Stack : MonoBehaviour
 
     void DisplayInitialStack()
     {
-        currentStack = parentHero.heroData.stack;   
-        stackText.text = currentStack.ToString();
+        
+        stack = parentHero.heroData.CurrentStack;
+        stackText.text = stack.ToString();
+        
     }
-
 }

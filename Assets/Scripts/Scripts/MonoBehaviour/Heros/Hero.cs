@@ -7,7 +7,10 @@ public abstract class Hero : MonoBehaviour
     public int velocity = 5;
     public CharAttributes heroData;
     StartBTN startBTN;
-
+    private void Awake()
+    {
+        heroData.SetCurrentAttributes();
+    }
     private void Start()
     {
         StorageMNG.OnClickOnGrayIcon += DestroyMe;
@@ -34,6 +37,8 @@ public abstract class Hero : MonoBehaviour
     {
         StorageMNG.OnClickOnGrayIcon -= DestroyMe;
     }
+
+    public abstract IAdjacentFinder GetTypeOfHero();
 
 
 }

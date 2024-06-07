@@ -25,13 +25,7 @@ public class FieldManager : MonoBehaviour
     private void Start()
     {
         IdentifyHexes();
-        //AvailablePos hero = FindObjectOfType<AvailablePos>();
-        //IAdjacentFinder adjFinder = new PositionsForGround();
-        //BattleHex startingHex = hero.GetComponentInParent<BattleHex>();
-        //int stepsLimit = BattleController.currentAtacker.velocity;
-        //startingHex.DefineMeAsStartingHex();
-        
-        //hero.GetAvailablePositions(hero.GetComponentInParent<BattleHex>(), stepsLimit, adjFinder);
+      
 
 
     }

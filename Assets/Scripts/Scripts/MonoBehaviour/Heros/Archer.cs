@@ -6,7 +6,12 @@ public class Archer : Hero
 {
     public override void DealsDamage(BattleHex target)
     {
-        throw new System.NotImplementedException();
+        
     }
 
+    public override IAdjacentFinder GetTypeOfHero()
+    {
+        IAdjacentFinder adjFinder = new PositionsForGround();
+        return adjFinder;
+    }
 }

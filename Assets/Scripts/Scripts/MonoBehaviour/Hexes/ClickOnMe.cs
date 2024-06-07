@@ -24,7 +24,7 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            BattleController.currentAtacker.GetComponent<Move>().StartMoving();
+            BattleController.currentAttacker.GetComponent<Move>().StartMoving();
         }    
     }
 
@@ -35,7 +35,7 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
         {
 
             hex.MakeMeTargetToMove();
-            BattleController.currentAtacker.GetComponent<OptimalPath>().MathPath();
+            BattleController.currentAttacker.GetComponent<OptimalPath>().MathPath();
         }
     }
 

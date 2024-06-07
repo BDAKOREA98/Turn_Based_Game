@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  velocity: 0
-  initiative: 0
-  hp: 0
-  atack: 0
-  resistance: 0
+  velocity: 2
+  initiative: 6
+  hp: 15
+  attack: 9
+  resistance: 1
   stack: 100
+  attackDistanse: 4
+  isRanger: 1
+  isFlying: 0
   heroSprite: {fileID: 21300000, guid: 4541c37022ef99847af4d91342d26dc2, type: 3}
   heroSO: {fileID: 5613119985168725376, guid: ade72180fa092f546b947002ab92baac, type: 3}

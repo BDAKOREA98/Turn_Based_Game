@@ -61,7 +61,7 @@ public class Distance : MonoBehaviour
         int currentDistance = initialHex.distanceText.distanceFromStartingPoint
                                     + initialHex.distanceText.stepsToGo;
 
-        int stepsLimit = BattleController.currentAtacker.velocity;
+        int stepsLimit = BattleController.currentAttacker.velocity;
 
         return distanceFromStartingPoint > currentDistance &&
             stepsLimit >= currentDistance;

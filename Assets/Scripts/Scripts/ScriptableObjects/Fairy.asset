@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
   m_Name: Fairy
   m_EditorClassIdentifier: 
-  velocity: 0
-  initiative: 0
-  hp: 0
-  atack: 0
+  velocity: 4
+  initiative: 4
+  hp: 10
+  attack: 5
   resistance: 0
   stack: 50
+  attackDistanse: 0
+  isRanger: 1
+  isFlying: 0
   heroSprite: {fileID: 21300000, guid: f4aac78a9992af94ebf9c0b867183581, type: 3}
   heroSO: {fileID: 1388828620300419903, guid: e90ce8892d3f7a34eb53d81935698e90, type: 3}

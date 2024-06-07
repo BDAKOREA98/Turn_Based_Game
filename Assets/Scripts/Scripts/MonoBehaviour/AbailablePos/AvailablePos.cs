@@ -11,15 +11,15 @@ public class AvailablePos : MonoBehaviour
     public void GetAvailablePositions(BattleHex startingHex, int stepsLimit, IAdjacentFinder AdjFinder)//looks for all positions available
     {
 
-        AdjFinder.GetAdjacentHexesExtended(startingHex);//looks for hexes adjacent to starting hex. Flying unit for now
-        //runs iterations to find all positions available. steps=number of iterations
+        AdjFinder.GetAdjacentHexesExtended(startingHex);
+        
         for (step = 2; step <= stepsLimit; step++)
         {
-            initialHexes = GetNewInitialHexes();//collects hexes ready for a new iteration
+            initialHexes = GetNewInitialHexes();
             foreach (BattleHex hex in initialHexes)
             {
-                AdjFinder.GetAdjacentHexesExtended(hex);// defines neighbouring hexes for each hex in the collection
-                hex.isIncluded = true;//defines evaluated hex as available position
+                AdjFinder.GetAdjacentHexesExtended(hex);
+                hex.isIncluded = true;
             }
         }
     }
