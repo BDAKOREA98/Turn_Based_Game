@@ -5,6 +5,7 @@ using UnityEngine;
 public class Turn : MonoBehaviour
 {
     BattleController battleController;
+    IInitialHexes getInitialHexes = new InitialPos();
 
     private void Start()
     {
@@ -19,17 +20,17 @@ public class Turn : MonoBehaviour
         IAdjacentFinder adjFinder = currentAttacker.GetTypeOfHero();
         int stepsLimit = currentAttacker.heroData.CurrentVelocity;
 
-        
-        currentAttacker.GetComponent<AvailablePos>().GetAvailablePositions(GetStartingHex(),
-                                                     stepsLimit, adjFinder);
+        GetStartingHex();
+        currentAttacker.GetComponent<AvailablePos>().GetAvailablePositions(
+                                                     stepsLimit, adjFinder, getInitialHexes);
 
         currentAttacker.DefineTargets();
     }
     
-    private BattleHex GetStartingHex()
+    private void GetStartingHex()
     {
         BattleHex startingHex = BattleController.currentAttacker.GetComponentInParent<BattleHex>();
         startingHex.DefineMeAsStartingHex(); 
-        return startingHex;
+       
     }
 }

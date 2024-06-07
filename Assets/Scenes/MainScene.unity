@@ -2943,7 +2943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387830602878531169, guid: 1ab606c14cbac194ba97ac1d52a0b082, type: 3}
       propertyPath: regimentPosition
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10964,7 +10964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387830602878531169, guid: 1ab606c14cbac194ba97ac1d52a0b082, type: 3}
       propertyPath: regimentPosition
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21563,6 +21563,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387830602878531169, guid: 1ab606c14cbac194ba97ac1d52a0b082, type: 3}
+      propertyPath: regimentPosition
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28503,7 +28507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387830602878531169, guid: 1ab606c14cbac194ba97ac1d52a0b082, type: 3}
       propertyPath: regimentPosition
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

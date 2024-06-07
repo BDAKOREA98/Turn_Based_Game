@@ -11,7 +11,9 @@ public class IfItIsNewGround : MonoBehaviour, IEvaluateHex
           == HexState.active
           && !evaluatedHex.isStartingHex
           && !evaluatedHex.isNeighboringHex
-          && evaluatedHex.AvailableToGround();
+          && evaluatedHex.AvailableToGround()
+         && evaluatedHex.GetComponentInChildren<Enemy>() == null;
+
         
         
     }

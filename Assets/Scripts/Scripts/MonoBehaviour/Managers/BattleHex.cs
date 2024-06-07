@@ -20,6 +20,8 @@ public class BattleHex : MonoBehaviour
     public bool isNeighboringHex = false;
     public bool isIncluded = false;
     public bool potencialTarget;
+    public bool lookonForTarget;
+
 
     private void Awake()
     {
@@ -102,6 +104,7 @@ public class BattleHex : MonoBehaviour
         distanceText.GetComponent<Text>().color = new Color32(255, 255, 255, 0);
         currentState.color = new Color32(255, 255, 255, 0);
         Landscape.color = new Color32(255, 255, 255, 255);
+        lookonForTarget = false;
         //distanceText.stepsToGoCurrent
 
     }

@@ -8,14 +8,15 @@ public class AvailablePos : MonoBehaviour
     List<BattleHex> initialHexes = new List<BattleHex>();//collects neighbouring hexes for evaluated hex
     
 
-    public void GetAvailablePositions(BattleHex startingHex, int stepsLimit, IAdjacentFinder AdjFinder)//looks for all positions available
+    public void GetAvailablePositions( int stepsLimit, IAdjacentFinder AdjFinder, IInitialHexes GetHexesToCheck)//looks for all positions available
     {
+        BattleHex startingHex =  BattleController.currentAttacker.GetComponentInParent<BattleHex>();
 
         AdjFinder.GetAdjacentHexesExtended(startingHex);
         
         for (step = 2; step <= stepsLimit; step++)
         {
-            initialHexes = GetNewInitialHexes();
+            initialHexes = GetHexesToCheck.GetNewInitialHexes();
             foreach (BattleHex hex in initialHexes)
             {
                 AdjFinder.GetAdjacentHexesExtended(hex);
@@ -25,14 +26,15 @@ public class AvailablePos : MonoBehaviour
     }
     internal List<BattleHex> GetNewInitialHexes()//collects objects whose neighbours need to be found
     {
-        initialHexes.Clear();// empty the array before filling it again
+        initialHexes.Clear();
         foreach (BattleHex hex in FieldManager.allHexesArray)
         {
-            if (hex.isNeighboringHex & !hex.isIncluded)//eliminates unnecessary hexes
+            if (hex.isNeighboringHex & !hex.isIncluded)
             {
                 initialHexes.Add(hex);
             }
         }
         return initialHexes;
     }
+
 }
