@@ -17,6 +17,15 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(hex.potencialTarget)
+        {
+            BattleController.currentTarget = this.GetComponentInChildren<Hero>();
+          
+            BattleController.currentAttacker.HeroIsAttacking();
+                return;
+        }
+
+
         if (!isTargetToMove)
         {
         SelectTargetToMove();

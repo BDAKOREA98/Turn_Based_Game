@@ -7,6 +7,7 @@ public class BattleController : MonoBehaviour
 {
     public static BattleHex targetToMove;
     public static Hero currentAttacker;
+    public static Hero currentTarget;
     List<Hero> allFighters = new List<Hero>(); 
 
     

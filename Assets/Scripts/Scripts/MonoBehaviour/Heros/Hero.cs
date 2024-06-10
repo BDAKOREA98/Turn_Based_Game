@@ -7,6 +7,8 @@ public abstract class Hero : MonoBehaviour
     public int velocity = 5;
     public CharAttributes heroData;
     StartBTN startBTN;
+    public Stack stack;
+
     private void Awake()
     {
         heroData.SetCurrentAttributes();
@@ -15,6 +17,8 @@ public abstract class Hero : MonoBehaviour
     {
         StorageMNG.OnClickOnGrayIcon += DestroyMe;
         startBTN = FindObjectOfType<StartBTN>();
+        stack = GetComponentInChildren<Stack>();
+
     }
 
     public abstract void DealsDamage(BattleHex target);
@@ -40,6 +44,8 @@ public abstract class Hero : MonoBehaviour
 
     public abstract IAdjacentFinder GetTypeOfHero();
     public abstract void DefineTargets();
+
+    public virtual void HeroIsAttacking() { }
 
 
 }

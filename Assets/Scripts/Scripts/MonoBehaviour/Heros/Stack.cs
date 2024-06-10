@@ -13,10 +13,10 @@ public class Stack : MonoBehaviour
     {
         parentHero = GetComponentInParent<Hero>();
         stackText = GetComponent<TextMeshProUGUI>();
-        DisplayInitialStack();
+        DisplayCurrentStack();
     }
 
-    void DisplayInitialStack()
+    public void DisplayCurrentStack()
     {
         
         stack = parentHero.heroData.CurrentStack;

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Knight : Hero
 {
+
+    IAttacking dealsDamage = new SimpleMeleeAttack();
     public override void DealsDamage(BattleHex target)
     {
+        dealsDamage.HeroIsDealingDamage(this, BattleController.currentTarget);
 
     }
 
@@ -19,6 +22,11 @@ public class Knight : Hero
     {
         IAdjacentFinder adjFinder = new PositionsForGround();
         return adjFinder;
+    }
+
+    public override void HeroIsAttacking()
+    {
+        GetComponent<Animator>().SetTrigger("isAttacking");
     }
 
 }

@@ -9,8 +9,8 @@ public class IfItIsNewFlying : MonoBehaviour, IEvaluateHex
         return evaluatedHex.battleHexState
             == HexState.active
             && !evaluatedHex.isStartingHex
-            && !evaluatedHex.isNeighboringHex;
-
+            && !evaluatedHex.isNeighboringHex
+            && evaluatedHex.GetComponentInChildren<Enemy>() == null;
 
     }
 }

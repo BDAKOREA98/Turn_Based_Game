@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  velocity: 3
-  initiative: 6
+  velocity: 2
+  initiative: 3
   hp: 15
   attack: 9
   resistance: 1
