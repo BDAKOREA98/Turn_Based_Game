@@ -15,7 +15,7 @@ MonoBehaviour:
   velocity: 2
   initiative: 9
   hp: 25
-  attack: 1000
+  attack: 20
   resistance: 3
   stack: 40
   attackDistanse: 1

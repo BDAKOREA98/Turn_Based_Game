@@ -9,6 +9,24 @@ public class DamageCounter : MonoBehaviour
     int targetStack;
     int damagebyUnit;
 
+    public int TargetStack
+    {
+        get { return targetStack; }
+        set
+        {
+            if(value > 0 )
+            {
+                targetStack = value;
+            }
+            else
+            {
+                targetStack = 0;
+            }
+        }
+    }
+
+
+
     int DamageByUnit
     {
         get { return damagebyUnit; }
@@ -32,7 +50,7 @@ public class DamageCounter : MonoBehaviour
 
         targetTotalHP = target.heroData.CurrentHP * target.heroData.CurrentStack - totalDamage;
 
-        targetStack = targetTotalHP / target.heroData.CurrentHP;
+        TargetStack = targetTotalHP / target.heroData.CurrentHP;
         return targetStack;
 
     }

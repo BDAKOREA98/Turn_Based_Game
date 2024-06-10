@@ -10,8 +10,11 @@ public class SimpleMeleeAttack : MonoBehaviour, IAttacking
     public void HeroIsDealingDamage(Hero attacker, Hero target)
     {
         targetStack = damageController.CountTargetStack(attacker, target);
+        int currentInt = target.heroData.CurrentStack;
+
         target.heroData.CurrentStack = targetStack;
-        target.stack.DisplayCurrentStack();
+        
+        target.stack.StartCoroutine(target.stack.CountDownToTargetStack(currentInt, targetStack));
 
 
     }
