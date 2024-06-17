@@ -8,10 +8,12 @@ public abstract class Hero : MonoBehaviour
     public CharAttributes heroData;
     StartBTN startBTN;
     public Stack stack;
+    Move moveCpmnt;
 
     private void Awake()
     {
         heroData.SetCurrentAttributes();
+        moveCpmnt = GetComponent<Move>();
     }
     private void Start()
     {
@@ -45,7 +47,11 @@ public abstract class Hero : MonoBehaviour
     public abstract IAdjacentFinder GetTypeOfHero();
     public abstract void DefineTargets();
 
-    public virtual void HeroIsAttacking() { }
+    public virtual void HeroIsAttacking() 
+    {
+        Vector3 targetPos = BattleController.currentTarget.transform.position;
+        moveCpmnt.ControlDirection(targetPos);
+    }
 
 
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Archer : Hero
 {
+     [SerializeField] Arrow arrow;
+     [SerializeField] internal  Vector3 initialPosCorrection;
+
+
     public override void DealsDamage(BattleHex target)
     {
         
@@ -18,5 +22,22 @@ public class Archer : Hero
     {
         IDefineTarget wayToLookForTargets = new TargetPlayerRange();
         wayToLookForTargets.DefineTargets(this);
+    }
+
+    public override void HeroIsAttacking() 
+    {
+        base.HeroIsAttacking();
+        GetComponent<Animator>().SetTrigger("isAttacking");
+        InstantiateArrow();
+    }
+
+    private void InstantiateArrow()
+    {
+        Vector3 positionForArrow = new Vector3(transform.position.x,
+            transform.position.y + initialPosCorrection.y, transform.position.z);
+
+        Quaternion rotation = new Quaternion();
+        Arrow Arrow = Instantiate(arrow, positionForArrow, rotation, transform);
+
     }
 }

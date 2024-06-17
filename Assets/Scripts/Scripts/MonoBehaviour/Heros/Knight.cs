@@ -26,6 +26,7 @@ public class Knight : Hero
 
     public override void HeroIsAttacking()
     {
+        base.HeroIsAttacking();
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
 

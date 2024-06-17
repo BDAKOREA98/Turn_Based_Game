@@ -154,6 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 5
   heroData: {fileID: 11400000, guid: 1b84a47f8617ca544bf9db6a591dd419, type: 2}
+  stack: {fileID: 0}
+  arrow: {fileID: 401517348449357189, guid: eeda177103dbc884fb34fee173df1422, type: 3}
+  initialPosCorrection: {x: 0, y: 0.7, z: 0}
 --- !u!114 &3497798173273034555
 MonoBehaviour:
   m_ObjectHideFlags: 0

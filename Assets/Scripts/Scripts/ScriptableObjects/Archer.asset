@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   velocity: 2
-  initiative: 3
+  initiative: 11
   hp: 15
   attack: 9
   resistance: 1
