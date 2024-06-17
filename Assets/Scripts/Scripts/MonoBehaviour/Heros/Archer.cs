@@ -36,8 +36,12 @@ public class Archer : Hero
         Vector3 positionForArrow = new Vector3(transform.position.x,
             transform.position.y + initialPosCorrection.y, transform.position.z);
 
-        Quaternion rotation = new Quaternion();
+        Hero currentTarget = BattleController.currentTarget.GetComponent<Hero>();
+        
+        Quaternion rotation = CalcRotation.CalculateRotation(currentTarget);
         Arrow Arrow = Instantiate(arrow, positionForArrow, rotation, transform);
+
+        Arrow.FireArrow();
 
     }
 }

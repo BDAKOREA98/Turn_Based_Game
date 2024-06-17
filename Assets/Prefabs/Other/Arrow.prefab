@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa3827f402ba724c865d778cd74ff66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetPosAdj: {x: 0, y: 0.7, z: 0}
+  velocity: 10
 --- !u!1 &6178042013238588362
 GameObject:
   m_ObjectHideFlags: 0
