@@ -16,7 +16,7 @@ MonoBehaviour:
   initiative: 3
   hp: 30
   attack: 8
-  resistance: 5
+  resistance: 0
   stack: 10
   attackDistanse: 0
   isRanger: 0

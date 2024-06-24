@@ -168,6 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 5
   heroData: {fileID: 11400000, guid: f3c3e8222579c4f48a656f64edf85f9b, type: 2}
+  stack: {fileID: 0}
+  mageBall: {fileID: 4745565697347693358, guid: b5dc4920d05acf7499433cd7d6379d20, type: 3}
+  initialPosCorrection: {x: 0, y: 0.7, z: 0}
 --- !u!1001 &1599670776629931942
 PrefabInstance:
   m_ObjectHideFlags: 0

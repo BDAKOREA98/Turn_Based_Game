@@ -9,6 +9,7 @@ public class Knight : Hero
     public override void DealsDamage(BattleHex target)
     {
         dealsDamage.HeroIsDealingDamage(this, BattleController.currentTarget);
+        
 
     }
 
@@ -26,7 +27,7 @@ public class Knight : Hero
 
     public override void HeroIsAttacking()
     {
-        base.HeroIsAttacking();
+        
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
 

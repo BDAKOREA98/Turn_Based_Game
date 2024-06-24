@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
   m_Name: MeleeFairy
   m_EditorClassIdentifier: 
-  velocity: 3
-  initiative: 4
+  velocity: 5
+  initiative: 16
   hp: 12
-  attack: 12
+  attack: 50
   resistance: 1
   stack: 50
   attackDistanse: 1
   isRanger: 0
-  isFlying: 0
+  isFlying: 1
   heroSprite: {fileID: 21300000, guid: 600682f955d3ad04599076388098a6ba, type: 3}
   heroSO: {fileID: 8194590849117932608, guid: 0d1a5f3a54c683d419ab9cb30b07cd1f, type: 3}

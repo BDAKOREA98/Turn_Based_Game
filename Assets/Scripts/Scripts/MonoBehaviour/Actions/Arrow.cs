@@ -8,7 +8,7 @@ public class Arrow : MonoBehaviour
     [SerializeField] Vector3 targetPosAdj;
     internal bool ArrowFlies = false;
     [SerializeField] float velocity;
-    IAttacking dealsDamage = new SimpleMeleeAttack();
+    IAttacking dealsDamage;
    
     
     private void Update()
@@ -20,21 +20,22 @@ public class Arrow : MonoBehaviour
 
             if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
             {
+                
+
                 ArrowFlies = false;
                 Hero currentTarget = BattleController.currentTarget;
                 dealsDamage.HeroIsDealingDamage(BattleController.currentAttacker, currentTarget);
-                //currentTarget.GetComponent<Animator>().
+                currentTarget.GetComponent<Animator>().SetTrigger("isTakenDamage");
                 DestroyMe();
             }
-        }
-        
-
+        }       
     }
 
-    public void FireArrow()
+    public void FireArrow(IAttacking attackMethod)
     {
         Vector3 currentTargetPos = BattleController.currentTarget.transform.position;
         targetPosition = currentTargetPos + targetPosAdj;
+        dealsDamage = attackMethod;
         ArrowFlies = true;
 
     }

@@ -6,12 +6,12 @@ using UnityEngine;
 public class FieldManager : MonoBehaviour
 {
     public RowManager[] allRows;
-    public static BattleHex[,] allHexesArray;// contains all Hexes in the BattleField
+    public static BattleHex[,] allHexesArray;
     int allRowsLength;
     public static List<BattleHex> activeHexList = new List<BattleHex>();
-    public Sprite availableAsTarget; //green frame
-    public Sprite notAavailable; //enemy, red frame
-    public Sprite availableToMove; //white frame
+    public Sprite availableAsTarget; 
+    public Sprite notAavailable; 
+    public Sprite availableToMove; 
     void Awake()
     {
         allRows = GetComponentsInChildren<RowManager>();
@@ -24,12 +24,12 @@ public class FieldManager : MonoBehaviour
     }
     private void Start()
     {
-        IdentifyHexes();
-      
+         IdentifyHexes();
 
+     //   CreateActiveHexList();
 
     }
-    private void CreateAllHexesArray()//creates coordinate system
+    private void CreateAllHexesArray()
     {
         int heightOfArray = allRows.Length;
         int widthOfArray = allRows[0].allHexesInRow.Length;
@@ -46,15 +46,16 @@ public class FieldManager : MonoBehaviour
 
             }
         }
-        
+
+        Debug.Log(allHexesArray.Length);
+
     }
-    private void IdentifyHexes()//highligths inactive and sets new value to active hexes
-    {
-        //compares coordinates of a hex with the distance from the center (0, 0, z)
-     foreach (BattleHex hex in allHexesArray)
+    private void IdentifyHexes()
+    {   
+        foreach (BattleHex hex in allHexesArray)
         {
-            if (Mathf.Abs(hex.transform.position.x) < 16.0f |
-                Mathf.Abs(hex.transform.position.y) < 8.0f)
+            if (Mathf.Abs(hex.transform.position.x) > 11.3f |
+                Mathf.Abs(hex.transform.position.y) > 6.2f)
             {
                 hex.MakeMeInActive();
             }
@@ -64,16 +65,18 @@ public class FieldManager : MonoBehaviour
             }
         }
         CreateActiveHexList();
+
+
     }
-    //creates list filled with active hexes
+    
     private void CreateActiveHexList()
     {
-        //looks for active hexes in all hexes
+    
             foreach (BattleHex hex in allHexesArray)
             {
                 if (hex.battleHexState == HexState.active)
                 {
-                    //adds an active hex to the list
+                 
                     activeHexList.Add(hex);
                 }
             }

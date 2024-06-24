@@ -36,11 +36,11 @@ public class CharAttributes : ScriptableObject
         get { return hpCurrent; }
         set { hpCurrent = value; }
     }
-    int atackCurrent;
+    int attackCurrent;
     public int CurrentAttack
     {
-        get { return atackCurrent; }
-        set { atackCurrent = value; }
+        get { return attackCurrent; }
+        set { attackCurrent = value; }
     }
     int resistanceCurrent;
     public int CurrentResistance
@@ -76,7 +76,7 @@ public class CharAttributes : ScriptableObject
     public void SetCurrentAttributes()
     {
         hpCurrent = hp;
-        atackCurrent = attack;
+        attackCurrent = attack;
         resistanceCurrent = resistance;
         stackCurrent = stack;
         initiativeCurrent = initiative;

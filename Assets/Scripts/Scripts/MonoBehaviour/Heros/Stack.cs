@@ -46,19 +46,7 @@ public class Stack : MonoBehaviour
         
     }
 
-    //public IEnumerator Example(int currentValue, int targetValue)
-    //{
-    //    int diff = currentValue - targetValue;
 
-    //    IterationVal = Mathf.FloorToInt(diff * Time.deltaTime / iterationCntrl);
-    //    while(currentValue >= targetValue + IterationVal)
-    //    {
-    //        currentValue -= IterationVal;
-    //        DisplayCurrentStack(currentValue);
-    //        yield return null;
-    //    }
-    //    DisplayCurrentStack(targetValue);
-    //}
 
     public IEnumerator CountDownToTargetStack(int currentValue, int targetValue)
     {

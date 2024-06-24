@@ -8,40 +8,46 @@ public class TargetPlayerRange : MonoBehaviour, IDefineTarget
     List<BattleHex> neighboursToCheck;
     IEvaluateHex checkHex = new IfItIsTarget();
     IInitialHexes getInitialHexes = new InitialTarget();
-
-
-    public void DefineTargets(Hero currentAttacker)
+    public void DefineTargets(Hero currentAtacker)
     {
-        if (TargetsNearby(currentAttacker) == false)//check if there is an enemy nearby
+        if (TargetsNearby(currentAtacker) == false)
         {
-            TargetsAtAttackDistance(currentAttacker);
+            TargetsAtAttackDistance(currentAtacker);
         }
     }
-    bool TargetsNearby(Hero currentAttacker)
+
+    bool TargetsNearby(Hero currentAtacker)
     {
         bool targetNearby = false;
-        initialHex = currentAttacker.GetComponentInParent<BattleHex>();
+        initialHex = currentAtacker.GetComponentInParent<BattleHex>();
 
-        
+      
         neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex, checkHex);
+        if (neighboursToCheck.Count == 0)
+        {
+            return targetNearby;
+        }
+
         if (neighboursToCheck.Count > 0)
         {
+            
+
             foreach (BattleHex hex in neighboursToCheck)
             {
                 hex.DefineMeAsPotencialTarget();
+                
             }
             targetNearby = true;
         }
         return targetNearby;
     }
-   
-    void TargetsAtAttackDistance(Hero currentAttacker)
+    
+    void TargetsAtAttackDistance(Hero currentAtacker)
     {
-        int stepsLimit = currentAttacker.heroData.AttackDistanse;
-        BattleHex inititalHex = currentAttacker.GetComponentInParent<BattleHex>();
+        int stepsLimit = currentAtacker.heroData.AttackDistanse;
+        BattleHex inititalHex = currentAtacker.GetComponentInParent<BattleHex>();
         IAdjacentFinder adjFinder = new MarkTargets();
-        
-        currentAttacker.GetComponent<AvailablePos>().GetAvailablePositions( stepsLimit, adjFinder, getInitialHexes);
+      
+        currentAtacker.GetComponent<AvailablePos>().GetAvailablePositions(stepsLimit, adjFinder, getInitialHexes);
     }
-
 }

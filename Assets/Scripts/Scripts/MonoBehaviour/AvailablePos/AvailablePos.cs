@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AvailablePos : MonoBehaviour
 {
-    private int step;//counts iterations
-    List<BattleHex> initialHexes = new List<BattleHex>();//collects neighbouring hexes for evaluated hex
+    private int step;
+    List<BattleHex> initialHexes = new List<BattleHex>();
     
 
-    public void GetAvailablePositions( int stepsLimit, IAdjacentFinder AdjFinder, IInitialHexes GetHexesToCheck)//looks for all positions available
+    public void GetAvailablePositions( int stepsLimit, IAdjacentFinder AdjFinder, IInitialHexes GetHexesToCheck)
     {
         BattleHex startingHex =  BattleController.currentAttacker.GetComponentInParent<BattleHex>();
 
@@ -24,7 +24,7 @@ public class AvailablePos : MonoBehaviour
             }
         }
     }
-    internal List<BattleHex> GetNewInitialHexes()//collects objects whose neighbours need to be found
+    internal List<BattleHex> GetNewInitialHexes()
     {
         initialHexes.Clear();
         foreach (BattleHex hex in FieldManager.allHexesArray)

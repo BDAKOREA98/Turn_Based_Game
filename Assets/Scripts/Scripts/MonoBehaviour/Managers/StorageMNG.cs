@@ -93,25 +93,5 @@ public class StorageMNG : MonoBehaviour
     }
 
 
-    //internal void ReturnRegiment(CharIcon clickedIcon)
-    //{
-
-    //    CharAttributes SOofRegiment = clickedIcon.charAttributes;
-
-    //    Hero[] regimentsOnBattleField = FindObjectsOfType<Hero>();
-
-    //    foreach (Hero hero in regimentsOnBattleField)
-    //    {
-    //        if (hero.heroData == SOofRegiment)
-    //        {
-    //            RemoveHero(hero);
-
-    //            break;
-    //        }
-
-
-    //    }
-
-    //}
 
 }

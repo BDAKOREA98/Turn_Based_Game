@@ -14,8 +14,8 @@ public class IfItIsNewGround : MonoBehaviour, IEvaluateHex
           && evaluatedHex.AvailableToGround()
          && evaluatedHex.GetComponentInChildren<Enemy>() == null;
 
-        
-        
+
+
     }
 
 }

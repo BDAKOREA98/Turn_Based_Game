@@ -6,7 +6,7 @@ public class Archer : Hero
 {
      [SerializeField] Arrow arrow;
      [SerializeField] internal  Vector3 initialPosCorrection;
-
+     IAttacking dealsDamage = new SimpleMeleeAttack();
 
     public override void DealsDamage(BattleHex target)
     {
@@ -41,7 +41,7 @@ public class Archer : Hero
         Quaternion rotation = CalcRotation.CalculateRotation(currentTarget);
         Arrow Arrow = Instantiate(arrow, positionForArrow, rotation, transform);
 
-        Arrow.FireArrow();
+        Arrow.FireArrow(dealsDamage);
 
     }
 }

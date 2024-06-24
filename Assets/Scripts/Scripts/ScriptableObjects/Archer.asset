@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  velocity: 100
+  velocity: 5
   initiative: 11
   hp: 15
-  attack: 9
+  attack: 2
   resistance: 1
   stack: 100
-  attackDistanse: 100
+  attackDistanse: 12
   isRanger: 1
   isFlying: 0
   heroSprite: {fileID: 21300000, guid: 4541c37022ef99847af4d91342d26dc2, type: 3}
