@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: aa99f0f348133e14ba118b6b758e8ea8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3478416233884498981
+    second: HURT_005_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -79,7 +82,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -92,7 +95,7 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -137,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36a0601222c7cf340bae502ec297318c
-      internalID: 1482486961
+      spriteID: af4fb9f7bcbf9114f8d4048e589d9535
+      internalID: -3478416233884498981
       vertices: []
       indices: 
       edges: []
@@ -154,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HURT_005_0: 1482486961
+      HURT_005_0: -3478416233884498981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
