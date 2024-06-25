@@ -21,5 +21,5 @@ MonoBehaviour:
   attackDistanse: 1
   isRanger: 0
   isFlying: 1
-  heroSprite: {fileID: 21300000, guid: 600682f955d3ad04599076388098a6ba, type: 3}
+  heroSprite: {fileID: 21300000, guid: b3dcfdc1aa2f5b04b831b41430e714e8, type: 3}
   heroSO: {fileID: 8194590849117932608, guid: 0d1a5f3a54c683d419ab9cb30b07cd1f, type: 3}

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class ClickOnMe : MonoBehaviour, IPointerClickHandler
 {
     BattleHex hex;
-    public bool isTargetToMove = false;//becomes true when the hex is clicked
+    public bool isTargetToMove = false;
     public FieldManager fieldManager;
 
     void Awake()
@@ -28,8 +28,7 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
 
         if (!isTargetToMove)
         {
-        SelectTargetToMove();
-
+            SelectTargetToMove();
         }
         else
         {
@@ -48,14 +47,14 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void ClearPreviousSelectionOfTargetHex()//Cancels previous selection
+    public void ClearPreviousSelectionOfTargetHex()
     {
-        foreach (BattleHex hex in FieldManager.activeHexList)//looks for selected hex in active hexes list
+        foreach (BattleHex hex in FieldManager.activeHexList)
         {
-            if (hex.clickOnMe.isTargetToMove == true)//evaluates hex if it is target
+            if (hex.clickOnMe.isTargetToMove == true)
             {
-                hex.GetComponent<ClickOnMe>().isTargetToMove = false;//overrides boolean
-                hex.MakeMeAvailable();// sets white frame
+                hex.GetComponent<ClickOnMe>().isTargetToMove = false;
+                hex.MakeMeAvailable();
             }
 
             hex.Landscape.color = new Color32(250, 250, 250, 250);

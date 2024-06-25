@@ -8,6 +8,7 @@ public class MeleeFairy : Hero
     public override void DealsDamage(BattleHex target)
     {
         dealsDamage.HeroIsDealingDamage(this, BattleController.currentTarget);
+        Debug.Log(dealsDamage);
     }
     public override IAdjacentFinder GetTypeOfHero()
     {
@@ -21,7 +22,6 @@ public class MeleeFairy : Hero
     }
     public override void HeroIsAttacking()
     {
-        base.HeroIsAttacking();
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
 }

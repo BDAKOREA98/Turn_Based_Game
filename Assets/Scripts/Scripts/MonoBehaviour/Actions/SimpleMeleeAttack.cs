@@ -16,6 +16,8 @@ public class SimpleMeleeAttack : MonoBehaviour, IAttacking
         
         target.stack.StartCoroutine(target.stack.CountDownToTargetStack(currentInt, targetStack));
 
+        Debug.Log(target.heroData);
+        Debug.Log(attacker.heroData);
 
     }
 
