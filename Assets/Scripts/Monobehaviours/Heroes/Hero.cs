@@ -43,4 +43,15 @@ public abstract class Hero : MonoBehaviour
         Vector3 targetPos = BattleController.currentTarget.transform.position;
         moveCpmnt.ControlDirection(targetPos);
     }
+
+    public void PlayerTurn(IInitialHexes getInitialHexes)
+    {
+        IAdjacentFinder adjFinder = GetTypeOfHero();
+        int stepsLimit = heroData.CurrentVelocity;
+
+        GetComponent<AvailablePos>().GetAvailablePositions(stepsLimit, adjFinder, getInitialHexes);
+        DefineTargets();
+
+    }
+
 }

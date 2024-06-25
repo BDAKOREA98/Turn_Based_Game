@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
- 
-    void Start()
+    BattleController battleController;
+    AllPosForGroundAI toCheckTheField;
+    private void Start()
     {
-        
+        battleController = FindObjectOfType<BattleController>();
+        toCheckTheField = GetComponent<AllPosForGroundAI>();
+
     }
 
- 
-    void Update()
+    public void AIturnBegin(IInitialHexes getInitialHex)
     {
-        
+        int stepsLimit = battleController.stepsToCheckWholeField;
+        BattleHex startHex = GetComponentInParent<BattleHex>();
+        toCheckTheField.GetAvailablePositions(stepsLimit, getInitialHex, startHex);
+
     }
+
+
 }

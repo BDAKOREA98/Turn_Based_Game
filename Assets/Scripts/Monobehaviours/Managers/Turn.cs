@@ -17,14 +17,22 @@ public class Turn : MonoBehaviour
     public void InitializeNewTurn()
     {
         battleController.DefineNewAtacker();
-        Hero currentAtacker = BattleController.currentAttacker;
-        IAdjacentFinder adjFinder = currentAtacker.GetTypeOfHero();
-        int stepsLimit = currentAtacker.heroData.CurrentVelocity;
-        GetStartingHex();
+        Hero currentAttacker = BattleController.currentAttacker;
         
-        currentAtacker.GetComponent<AvailablePos>().GetAvailablePositions(stepsLimit, adjFinder, getInitialHexes);
+        
+        
+        GetStartingHex();
 
-        currentAtacker.DefineTargets();
+        if(currentAttacker.GetComponent<Enemy>() == null)
+        {
+            currentAttacker.PlayerTurn(getInitialHexes);
+        }
+        else
+        {
+            currentAttacker.GetComponent<Enemy>().AIturnBegin(getInitialHexes);
+        }
+
+
     }
     
     private void GetStartingHex()

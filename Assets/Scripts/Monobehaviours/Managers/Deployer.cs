@@ -73,5 +73,8 @@ public class Deployer : MonoBehaviour
     {
         Hero enemy = Instantiate(charAttributes.heroSO, hexPosition.transform);
         enemy.gameObject.AddComponent<Enemy>();
+
+        enemy.gameObject.AddComponent<AllPosForGroundAI>();
+
     }
 }

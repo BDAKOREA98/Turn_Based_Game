@@ -60,4 +60,15 @@ public class Distance : MonoBehaviour
         return distanceFromStartingPoint > currentDistance &&
                 stepsLimit >= currentDistance;
     }
+
+    public bool EvaluateDistanceForGroundAI(BattleHex initialHex, int stepsLimit)
+    {
+
+        int currentDistance = initialHex.distanceText.distanceFromStartingPoint
+                              + initialHex.distanceText.stepsToGo;
+        
+
+        return distanceFromStartingPoint > currentDistance &&
+                stepsLimit >= currentDistance;
+    }
 }
