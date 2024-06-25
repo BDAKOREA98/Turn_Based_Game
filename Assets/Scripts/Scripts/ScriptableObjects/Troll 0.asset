@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
   m_Name: Troll 0
   m_EditorClassIdentifier: 
-  velocity: 2
-  initiative: 3
+  velocity: 3
+  initiative: 10
   hp: 30
   attack: 8
   resistance: 0
   stack: 35
-  attackDistanse: 0
+  attackDistanse: 1
   isRanger: 0
   isFlying: 0
   heroSprite: {fileID: 21300000, guid: 63a254db3e58ccc4b900be2d86e69868, type: 3}

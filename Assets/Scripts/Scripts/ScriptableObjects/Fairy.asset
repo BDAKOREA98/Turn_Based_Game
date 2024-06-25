@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fairy
   m_EditorClassIdentifier: 
   velocity: 4
-  initiative: 13
+  initiative: 2
   hp: 10
   attack: 5
   resistance: 0

@@ -8,8 +8,8 @@ public class BattleController : MonoBehaviour
     public static BattleHex targetToMove;
     public static Hero currentAttacker;
     public static Hero currentTarget;
-    List<Hero> allFighters = new List<Hero>(); 
-
+    List<Hero> allFighters = new List<Hero>();
+    public int stepsToCheckWholeField;
     
     public List<Hero> DefineAllFighters()
     {

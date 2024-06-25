@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    BattleController battleController;
+    AllPosForGroundAI tocheckTheField;
     void Start()
     {
-        
+        battleController = FindObjectOfType<BattleController>();
+        tocheckTheField = GetComponent<AllPosForGroundAI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    public void AIsTurnBegin(IInitialHexes getInitialHexes)
     {
-        
+        int stepsLimit = battleController.stepsToCheckWholeField;;
+        BattleHex startintHex = GetComponentInParent<BattleHex>();
+        tocheckTheField.GetAvailablePositions(stepsLimit, getInitialHexes, startintHex);
     }
+
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f165f79d3a5794dbcefc697b0ac8f1, type: 3}
   m_Name: Troll 2
   m_EditorClassIdentifier: 
-  velocity: 2
-  initiative: 3
+  velocity: 5
+  initiative: 4
   hp: 30
   attack: 8
   resistance: 0

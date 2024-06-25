@@ -31,8 +31,8 @@ public class NeighboursFinder : MonoBehaviour
         }
 
 
-        //Debug.Log("Neibours");
-        //Debug.Log(FieldManager.allHexesArray.Length);
+        
+        Debug.Log(FieldManager.allHexesArray.Length);
 
         return allNeighbours;
 

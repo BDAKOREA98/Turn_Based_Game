@@ -54,4 +54,14 @@ public abstract class Hero : MonoBehaviour
     }
 
 
+    public void PlayersTurn(IInitialHexes getInitialHexes)
+    {
+        IAdjacentFinder adjFinder = GetTypeOfHero();
+        int stepsLimit = heroData.CurrentVelocity;
+
+        GetComponent<AvailablePos>().GetAvailablePositions(stepsLimit, adjFinder, getInitialHexes);
+        DefineTargets();
+    }
+
+
 }

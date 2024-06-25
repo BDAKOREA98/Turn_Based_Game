@@ -10,7 +10,7 @@ public class Troll : Hero
     }
     public override IAdjacentFinder GetTypeOfHero()
     {
-        IAdjacentFinder adjFinder = new PositionsForGround();
+        IAdjacentFinder adjFinder = new PosForGroundAI();
         return adjFinder;
     }
     public override void DefineTargets()
