@@ -7,6 +7,11 @@ public class Distance : MonoBehaviour
 {
     public int distanceFromStartingPoint;
     public int stepsToGo;
+    public int defaoutDistance;
+    public int defaultstepsToGo;
+
+
+
     BattleHex hex;
     Text distanceText; 
 

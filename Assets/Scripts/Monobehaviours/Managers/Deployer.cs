@@ -76,5 +76,7 @@ public class Deployer : MonoBehaviour
 
         enemy.gameObject.AddComponent<AllPosForGroundAI>();
 
+     
+
     }
 }
