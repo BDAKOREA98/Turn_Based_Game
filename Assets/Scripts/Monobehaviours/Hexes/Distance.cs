@@ -31,8 +31,11 @@ public class Distance : MonoBehaviour
     }
     public void SetDistanceForFlyingUnit(BattleHex initialHex)
     {
-       
-        distanceFromStartingPoint = initialHex.distanceText.distanceFromStartingPoint + 1;
+
+        stepsToGo = 1;
+
+
+        distanceFromStartingPoint = initialHex.distanceText.distanceFromStartingPoint + stepsToGo;
        
         DisplayDistanceText();
     }

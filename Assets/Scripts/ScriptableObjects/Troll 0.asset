@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Troll 0
   m_EditorClassIdentifier: 
   velocity: 3
-  initiative: 10
+  initiative: 3
   hp: 30
   atack: 8
   resistance: 5

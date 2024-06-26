@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MeleeFairy : Hero
 {
+    IAttacking dealsDamage = new SimpleMeleeAttack();
     public override void DealsDamage(BattleHex target)
     {
 
+        dealsDamage.HeroIsDealingDamage(this, BattleController.currentTarget);
     }
     public override IAdjacentFinder GetTypeOfHero()
     {
@@ -17,5 +19,10 @@ public class MeleeFairy : Hero
     {
         IDefineTarget wayToLookForTargets = new TargetPlayerMelee();
         wayToLookForTargets.DefineTargets(this);
+    }
+    public override void HeroIsAtacking()
+    {
+        base.HeroIsAtacking();
+        GetComponent<Animator>().SetTrigger("isAttacking");
     }
 }

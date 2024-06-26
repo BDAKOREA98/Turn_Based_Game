@@ -10,7 +10,7 @@ public class Turn : MonoBehaviour
     private void Start()
     {
         battleController = GetComponent<BattleController>();
-        IInitialHexes getInitialHexes = new InitialPos();
+      
         
         StartBTN.OnStartingBattle += InitializeNewTurn;
     }
@@ -25,10 +25,12 @@ public class Turn : MonoBehaviour
 
         if(currentAttacker.GetComponent<Enemy>() == null)
         {
+            IInitialHexes getInitialHexes = new InitialPos();
             currentAttacker.PlayerTurn(getInitialHexes);
         }
         else
         {
+            IInitialHexes getInitialHexes = new InitialPosAI();
             currentAttacker.GetComponent<Enemy>().AIturnBegin(getInitialHexes);
         }
 

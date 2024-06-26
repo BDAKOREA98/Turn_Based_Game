@@ -6,7 +6,18 @@ public class IfItIsTarget : MonoBehaviour, IEvaluateHex
 {
     public bool EvaluateHex(BattleHex evaluatedHex)
     {
-        return evaluatedHex.GetComponentInChildren<Enemy>() != null;
+        
+
+        if(BattleController.currentAttacker.GetComponent<Enemy>() == null)
+        {
+            return evaluatedHex.GetComponentInChildren<Enemy>() != null;
+        }
+        else
+        {
+            return evaluatedHex.GetComponentInChildren<Hero>() != null &&
+                evaluatedHex.GetComponentInChildren<Enemy>() == null;
+        }
+
     }
 
 }

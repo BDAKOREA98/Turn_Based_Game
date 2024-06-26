@@ -17,10 +17,9 @@ public class AllPosForGroundAI : MonoBehaviour
             initialHexes = getHexesToCheck.GetNewInitialHexes();
             foreach (BattleHex hex in initialHexes)
             {
-                if (IfThereIsPlayersRegiment(hex))
-                {
+                
                     GetAdjacentHexesExtended(stepsLimit, hex);
-                }
+                
             }
         }
     }
@@ -40,20 +39,6 @@ public class AllPosForGroundAI : MonoBehaviour
 
 
 
-    }
-
-    private bool IfThereIsPlayersRegiment(BattleHex evaluateHex)
-    {
-        bool AIPosfalse = true;
-
-        if (evaluateHex.GetComponentInChildren<Hero>() != null &&
-            evaluateHex.GetComponentInChildren<Enemy>() == null)
-        {
-            evaluateHex.DefineMeAsPotencialTarget();
-            AIPosfalse = false;
-        }
-
-        return AIPosfalse;
     }
 
 

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Troll : Hero
 {
+
+    IAttacking dealsDamage = new SimpleMeleeAttack();
+
     public override void DealsDamage(BattleHex target)
     {
-
+        dealsDamage.HeroIsDealingDamage(this, BattleController.currentTarget);
     }
     public override IAdjacentFinder GetTypeOfHero()
     {
@@ -15,8 +18,28 @@ public class Troll : Hero
     }
     public override void DefineTargets()
     {
-        IDefineTarget wayToLookForTargets = new TargetPlayerMelee();
-        wayToLookForTargets.DefineTargets(this);
+     
+
+        BattleHex initialHex = GetComponentInParent<BattleHex>();
+        IEvaluateHex checkHex = new IfItIsTarget();
+
+        List<BattleHex> neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex, checkHex);
+        if(neighboursToCheck.Count > 0)
+        {
+            HeroIsAtacking();
+        }
+        else
+        {
+            print("TurnEnd");
+        }
+
+
+    }
+
+    public override void HeroIsAtacking()
+    {
+        base.HeroIsAtacking();
+        GetComponent<Animator>().SetTrigger("isAttacking");
     }
 
 }
