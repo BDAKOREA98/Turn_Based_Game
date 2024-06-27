@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   velocity: 2
-  initiative: 2
+  initiative: 5
   hp: 25
-  atack: 200
+  atack: 10
   resistance: 3
   stack: 40
-  atackdistanse: 1
+  attackdistanse: 0
   isRanger: 0
   isFlying: 0
   heroSprite: {fileID: 21300000, guid: 3361c58d9e5019e4ba31fecd30dfb76e, type: 3}

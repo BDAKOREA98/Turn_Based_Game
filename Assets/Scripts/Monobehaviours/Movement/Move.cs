@@ -69,7 +69,9 @@ public class Move : MonoBehaviour
         isMoving = !isMoving;
         transform.parent = path[currentStep].transform;
         hero.GetComponent<Animator>().SetBool("IsMoving", false);
+        hero.heroData.CurrentVelocity = 0;
         hero.DefineTargets();
+
     }
     internal void ControlDirection(Vector3 targetPos)
     {

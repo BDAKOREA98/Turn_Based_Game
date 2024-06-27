@@ -22,9 +22,9 @@ public class Archer : Hero
         IDefineTarget wayToLookForTargets = new TargetPlayerRange();
         wayToLookForTargets.DefineTargets(this);
     }
-    public override void HeroIsAtacking()
+    public override void HeroIsAttacking()
     {
-        base.HeroIsAtacking();
+        base.HeroIsAttacking();
         GetComponent<Animator>().SetTrigger("isAttacking");
         InstantiateArrow();
     }

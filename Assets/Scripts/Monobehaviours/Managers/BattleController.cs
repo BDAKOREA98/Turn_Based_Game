@@ -10,19 +10,28 @@ public class BattleController : MonoBehaviour
     public static Hero currentTarget;
     List<Hero> allFighters = new List<Hero>();
     public int stepsToCheckWholeField;
+    public List<BattleHex> potencialTargets = new List<BattleHex>();
 
-    
+    Turn turn;
+
+     void Start()
+    {
+        turn = GetComponent<Turn>();
+    }
+
     public List<Hero> DefineAllFighters()
     {
         allFighters = FindObjectsOfType<Hero>().ToList();
         return allFighters;
     }
-    public void DefineNewAtacker()
+    public void DefineNewAttacker()
     {
     
         List<Hero> allFighters = DefineAllFighters().
                                  OrderByDescending(hero => hero.heroData.InitiativeCurrent).ToList();
         currentAttacker = allFighters[0];
+        currentAttacker.heroData.InitiativeCurrent = 0;
+
     }
     public void CleanField()
     {
@@ -31,5 +40,31 @@ public class BattleController : MonoBehaviour
             hex.SetDefaultValue();
         }
     }
+
+    public void RemoveHeroWhenItIsSkilled(Hero hero)
+    {
+        Destroy(hero.gameObject);
+        print(hero.gameObject.name + " is killed");
+       // turn.TurnIsCompleted();
+    }
+
+    public List<BattleHex> IsLookingForPotentialTargets()
+    {
+        potencialTargets.Clear();
+
+        foreach (BattleHex hex in FieldManager.activeHexList)
+        {
+            if (hex.potencialTarget)
+            {
+                potencialTargets.Add(hex);
+
+            }
+
+        }
+        return potencialTargets;
+
+
+    }
+
 
 }

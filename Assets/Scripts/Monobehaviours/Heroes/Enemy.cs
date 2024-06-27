@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     BattleController battleController;
     AllPosForGroundAI toCheckTheField;
-    public List<BattleHex> potencialTargets = new List<BattleHex>();
+   
     public List<BattleHex> posToOccupy = new List<BattleHex>();
     List<BattleHex> allTargets = new List<BattleHex>();
     List<BattleHex> closeTargets = new List<BattleHex>();
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         //AISelectsTargetToAttack();
        
         AIMakesDecision();
-        AISelectsPosToOCuppy();
+        //AISelectsPosToOCuppy();
         
     }
 
@@ -60,23 +60,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private List<BattleHex> AIIsLookingForPotentialTargets()
-    {
-        potencialTargets.Clear();
-
-        foreach (BattleHex hex in FieldManager.activeHexList)
-        {
-            if (hex.potencialTarget)
-            {
-                potencialTargets.Add(hex);
-
-            }
-
-        }
-        return potencialTargets;
-
-
-    }
+   
 
     private List<BattleHex> CheckIfAttackIsAvailable()
     {
@@ -84,7 +68,7 @@ public class Enemy : MonoBehaviour
 
         closeTargets.Clear();
 
-        List<BattleHex> allTargets = AIIsLookingForPotentialTargets();
+        List<BattleHex> allTargets = battleController.IsLookingForPotentialTargets();
 
         foreach(BattleHex hex in allTargets)
         {
@@ -103,18 +87,19 @@ public class Enemy : MonoBehaviour
     {
         allTargets.Clear();
 
-        if(CheckIfAttackIsAvailable().Count > 0)
-        {
-            allTargets = CheckIfAttackIsAvailable().OrderBy(hero => hero.GetComponentInChildren<Hero>().heroData.CurrentHP).ToList();
-
+        if (CheckIfAttackIsAvailable().Count > 0)
+        {       
+            allTargets = CheckIfAttackIsAvailable().
+                         OrderBy(hero => hero.GetComponentInChildren<Hero>().heroData.CurrentHP).ToList();
         }
         else
         {
-            allTargets = AIIsLookingForPotentialTargets().OrderBy(hero => hero.distanceText.distanceFromStartingPoint).
-                ThenBy(hero => hero.GetComponentInChildren<Hero>().heroData.CurrentHP).ToList();
+            allTargets = battleController.IsLookingForPotentialTargets().OrderBy(hero => hero.distanceText.distanceFromStartingPoint).
+                        ThenBy(hero => hero.GetComponentInChildren<Hero>().heroData.CurrentHP).ToList();
         }
+
         BattleController.currentTarget = allTargets[0].GetComponentInChildren<Hero>();
-        Debug.Log(allTargets[0].GetComponentInChildren<Hero>().gameObject.name);
+
         return allTargets[0];
 
     }
@@ -163,7 +148,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            hero.HeroIsAtacking();
+            hero.HeroIsAttacking();
         }
 
     }

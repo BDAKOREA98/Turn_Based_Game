@@ -80,4 +80,11 @@ public class CharAttributes : ScriptableObject
         initiativeCurrent = initiative;
         velocityCurrent = velocity;
     }
+
+    public void SetDefaultVelocityAndInitiative()
+    {
+        velocityCurrent = velocity;
+        initiativeCurrent = initiative;
+    }    
+
 }

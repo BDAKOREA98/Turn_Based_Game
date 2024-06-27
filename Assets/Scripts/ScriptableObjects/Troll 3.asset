@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 3
   initiative: 4
-  hp: 30
+  hp: 0
   atack: 8
   resistance: 5
-  stack: 10
+  stack: 0
   attackdistanse: 0
   isRanger: 0
   isFlying: 0

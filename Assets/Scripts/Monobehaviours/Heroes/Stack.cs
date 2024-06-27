@@ -10,6 +10,7 @@ public class Stack : MonoBehaviour
     private int stack;
     [SerializeField] float iterationCntrl;
     int iterationVal;
+    Turn turn;
     public int IterationVal
     {
         get { return iterationVal; }
@@ -24,6 +25,7 @@ public class Stack : MonoBehaviour
         parentHero = GetComponentInParent<Hero>();
         stackText = GetComponent<TextMeshProUGUI>();
         DisplayCurrentStack(parentHero.heroData.CurrentStack);
+        turn = FindObjectOfType<Turn>();
     }
 
     public void DisplayCurrentStack(int currentStack)
@@ -45,6 +47,26 @@ public class Stack : MonoBehaviour
             DisplayCurrentStack(currentValue);
             yield return wait;
         }
-        DisplayCurrentStack(targetValue); 
+        DisplayCurrentStack(targetValue);
+        CheckIfHeroIsKilled();
     }
+
+    void CheckIfHeroIsKilled()
+    {
+        if(parentHero.heroData.CurrentStack == 0)
+        {
+            parentHero.GetComponent<Animator>().SetTrigger("IsDead");
+
+        }
+        else
+        {
+            turn.TurnIsCompleted();
+        }    
+
+    }
+
+
+
+
+
 }

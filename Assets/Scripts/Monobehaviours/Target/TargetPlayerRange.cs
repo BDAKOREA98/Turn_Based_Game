@@ -8,18 +8,20 @@ public class TargetPlayerRange : MonoBehaviour, IDefineTarget
     List<BattleHex> neighboursToCheck;
     IEvaluateHex checkHex = new IfItIsTarget();
     IInitialHexes getInitialHexes = new InitialTarget();
-    public void DefineTargets(Hero currentAtacker)
+
+    Turn turn;
+    public void DefineTargets(Hero currentAttacker)
     {
-        if (TargetsNearby(currentAtacker) == false)
+        if (TargetsNearby(currentAttacker) == false)
         {
-            TargetsAtAttackDistance(currentAtacker);
+            TargetsAtAttackDistance(currentAttacker);
         }
     }
     
-    bool TargetsNearby(Hero currentAtacker)
+    bool TargetsNearby(Hero currentAttacker)
     {
         bool targetNearby = false;
-        initialHex = currentAtacker.GetComponentInParent<BattleHex>();
+        initialHex = currentAttacker.GetComponentInParent<BattleHex>();
 
        
         neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex, checkHex);
@@ -35,12 +37,28 @@ public class TargetPlayerRange : MonoBehaviour, IDefineTarget
         return targetNearby;
     }
     
-    void TargetsAtAttackDistance(Hero currentAtacker)
+    void TargetsAtAttackDistance(Hero currentAttacker)
     {
-        int stepsLimit = currentAtacker.heroData.Attackdistanse;
-        BattleHex inititalHex = currentAtacker.GetComponentInParent<BattleHex>();
+        int stepsLimit = currentAttacker.heroData.Attackdistanse;
+        BattleHex inititalHex = currentAttacker.GetComponentInParent<BattleHex>();
         IAdjacentFinder adjFinder = new MarkTargets();
         
-        currentAtacker.GetComponent<AvailablePos>().GetAvailablePositions(stepsLimit, adjFinder, getInitialHexes);
+        currentAttacker.GetComponent<AvailablePos>().GetAvailablePositions(stepsLimit, adjFinder, getInitialHexes);
+
+        CheckIfItIsNewTurn();
+
     }
+
+    private void CheckIfItIsNewTurn()
+    {
+        BattleController battleController = FindObjectOfType<BattleController>();
+        if(battleController.IsLookingForPotentialTargets().Count ==0 
+            && BattleController.currentAttacker.heroData.CurrentVelocity == 0)
+        {
+            turn = FindObjectOfType<Turn>();
+            turn.TurnIsCompleted();
+        }
+    }
+
+
 }

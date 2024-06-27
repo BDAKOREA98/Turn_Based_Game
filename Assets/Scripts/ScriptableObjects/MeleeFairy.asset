@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MeleeFairy
   m_EditorClassIdentifier: 
   velocity: 3
-  initiative: 15
+  initiative: 1
   hp: 12
   atack: 12
   resistance: 1

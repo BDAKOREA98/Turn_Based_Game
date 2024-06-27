@@ -20,9 +20,9 @@ public class MeleeFairy : Hero
         IDefineTarget wayToLookForTargets = new TargetPlayerMelee();
         wayToLookForTargets.DefineTargets(this);
     }
-    public override void HeroIsAtacking()
+    public override void HeroIsAttacking()
     {
-        base.HeroIsAtacking();
+        base.HeroIsAttacking();
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
 }

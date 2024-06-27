@@ -21,7 +21,7 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
         if (hex.potencialTarget)
         {
             BattleController.currentTarget = this.GetComponentInChildren<Hero>();
-            BattleController.currentAttacker.HeroIsAtacking();
+            BattleController.currentAttacker.HeroIsAttacking();
             return;
         }
         if (!isTargetToMove)

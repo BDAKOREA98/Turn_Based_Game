@@ -15,9 +15,9 @@ MonoBehaviour:
   velocity: 3
   initiative: 3
   hp: 30
-  atack: 8
+  atack: 10
   resistance: 5
-  stack: 35
+  stack: 40
   attackdistanse: 0
   isRanger: 0
   isFlying: 0

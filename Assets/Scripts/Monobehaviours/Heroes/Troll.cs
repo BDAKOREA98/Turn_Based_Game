@@ -26,19 +26,19 @@ public class Troll : Hero
         List<BattleHex> neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex, checkHex);
         if(neighboursToCheck.Count > 0)
         {
-            HeroIsAtacking();
+            HeroIsAttacking();
         }
         else
         {
-            print("TurnEnd");
+            turn.TurnIsCompleted();
         }
 
 
     }
 
-    public override void HeroIsAtacking()
+    public override void HeroIsAttacking()
     {
-        base.HeroIsAtacking();
+        base.HeroIsAttacking();
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
 
