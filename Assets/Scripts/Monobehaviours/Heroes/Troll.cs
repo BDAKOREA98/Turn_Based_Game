@@ -42,4 +42,8 @@ public class Troll : Hero
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
 
+    public override void HeroIsKilled()
+    {
+        base.HeroIsKilled();
+    }
 }

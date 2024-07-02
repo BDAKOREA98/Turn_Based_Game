@@ -49,6 +49,7 @@ public abstract class Hero : MonoBehaviour
     {
         Vector3 targetPos = BattleController.currentTarget.transform.position;
         moveCpmnt.ControlDirection(targetPos);
+        Debug.Log(BattleController.currentTarget);
     }
 
     public void PlayerTurn(IInitialHexes getInitialHexes)
@@ -61,10 +62,12 @@ public abstract class Hero : MonoBehaviour
 
     }
 
-    public void HeroIsKilled()
+    public virtual void HeroIsKilled()
     {
         Turn.OnNewRound -= heroData.SetDefaultVelocityAndInitiative;
         battleController.RemoveHeroWhenItIsSkilled(this);
+        
+
     }
 
 

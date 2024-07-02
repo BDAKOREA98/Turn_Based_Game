@@ -9,9 +9,12 @@ public class CharIcon : MonoBehaviour
     [SerializeField] internal Image backGround;
     [SerializeField] internal TMPro.TextMeshProUGUI stackText;
     [SerializeField] internal CharAttributes charAttributes;
-    internal bool deployed = false;
+    
                                    
     StorageMNG storage;
+
+    string losses = "0";
+
     private void Start()
     {
         storage = GetComponentInParent<StorageMNG>();
@@ -21,11 +24,12 @@ public class CharIcon : MonoBehaviour
     {
         heroImage.sprite = charAttributes.heroSprite;
         stackText.text = charAttributes.stack.ToString();
+        charAttributes.isDeployed = false;
     }
     public void IconClicked()
     {
         StorageMNG storage = GetComponentInParent<StorageMNG>();
-        if (!deployed)
+        if (!charAttributes.isDeployed)
         {
             storage.TintIcon(this);
         }
@@ -38,14 +42,27 @@ public class CharIcon : MonoBehaviour
     public void HeroIsDeployed()
     {
         backGround.sprite = storage.deployedRegiment;
-        deployed = true;
+        charAttributes.isDeployed = true;
     }
     public void ReturnDefaultState(CharAttributes selectedCharAttributes)
     {
         if (selectedCharAttributes == charAttributes)
         {
-            backGround.sprite = GetComponentInParent<StorageMNG>().defaultIcon; 
-            deployed = false;
+            backGround.sprite = GetComponentInParent<StorageMNG>().defaultIcon;
+            charAttributes.isDeployed = false;
         }
     }
+    internal void FillIconWhenGameIsOver(CharAttributes attributes)
+    {
+        heroImage.sprite = attributes.heroSprite;
+        if(attributes.Calculatelosses() != 0)
+        {
+            losses = "- " + attributes.Calculatelosses();
+        }
+
+        stackText.text = losses;
+
+
+    }
+
 }

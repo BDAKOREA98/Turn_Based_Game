@@ -52,7 +52,7 @@ public class TargetPlayerRange : MonoBehaviour, IDefineTarget
     private void CheckIfItIsNewTurn()
     {
         BattleController battleController = FindObjectOfType<BattleController>();
-        if(battleController.IsLookingForPotentialTargets().Count ==0 
+        if(battleController.IsLookingForPotentialTargets().Count == 0 
             && BattleController.currentAttacker.heroData.CurrentVelocity == 0)
         {
             turn = FindObjectOfType<Turn>();

@@ -7,7 +7,10 @@ public class Enemy : MonoBehaviour
 {
     BattleController battleController;
     AllPosForGroundAI toCheckTheField;
-   
+
+
+
+    public List<BattleHex> potentialTargets = new List<BattleHex>();
     public List<BattleHex> posToOccupy = new List<BattleHex>();
     List<BattleHex> allTargets = new List<BattleHex>();
     List<BattleHex> closeTargets = new List<BattleHex>();
@@ -37,10 +40,8 @@ public class Enemy : MonoBehaviour
         toCheckTheField.GetAvailablePositions(stepsLimit, getInitialHex, startHex);
 
         CollectAllPosToOccupy();
-        //AISelectsTargetToAttack();
-       
         AIMakesDecision();
-        //AISelectsPosToOCuppy();
+        
         
     }
 
@@ -61,6 +62,7 @@ public class Enemy : MonoBehaviour
     }
 
    
+  
 
     private List<BattleHex> CheckIfAttackIsAvailable()
     {
@@ -87,6 +89,9 @@ public class Enemy : MonoBehaviour
     {
         allTargets.Clear();
 
+      
+
+
         if (CheckIfAttackIsAvailable().Count > 0)
         {       
             allTargets = CheckIfAttackIsAvailable().
@@ -99,6 +104,12 @@ public class Enemy : MonoBehaviour
         }
 
         BattleController.currentTarget = allTargets[0].GetComponentInChildren<Hero>();
+
+        for (int i = 0; i < allTargets.Count(); i++)
+        {
+
+            Debug.Log(allTargets[i]);
+        }
 
         return allTargets[0];
 

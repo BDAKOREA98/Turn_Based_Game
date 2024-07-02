@@ -7,8 +7,13 @@ public class Turn : MonoBehaviour
     BattleController battleController;
     IInitialHexes getInitialHexes = new InitialPos();
 
+   
+
     public delegate void StartNewRound();
     public static event StartNewRound OnNewRound;
+
+    [SerializeField] GameOver gameOverPanel;
+    FieldManager parent;
 
 
     private void Start()
@@ -17,6 +22,7 @@ public class Turn : MonoBehaviour
       
         
         StartBTN.OnStartingBattle += InitializeNewTurn;
+        parent = FindObjectOfType<FieldManager>();
     }
 
     public void TurnIsCompleted()
@@ -29,20 +35,32 @@ public class Turn : MonoBehaviour
         WaitForSeconds wait = new WaitForSeconds(1f);
         yield return wait;
 
+        battleController.events.gameObject.SetActive(true);
+
         List<Hero> allFighters = battleController.DefineAllFighters();
 
 
         if(IfThereIsAIRegiment(allFighters) && IfThereIsPlayerRegiment(allFighters))
         {
-           NextTurnOrNextRound(allFighters);
+             NextTurnOrNextRound(allFighters);
         }
         else
         {
-            print("Game Over");
+            battleController.CleanField();
+            GameOver gameOver = Instantiate(gameOverPanel, parent.transform);
+            gameOver.DefeatOrVictory(IfThereIsPlayerRegiment(allFighters));
+            RemoveAllHeroes(allFighters);
         }
 
     }
 
+    void RemoveAllHeroes(List<Hero> allFighters)
+    {
+        foreach(Hero hero in allFighters)
+        {
+            Destroy(hero.gameObject);
+        }
+    }
 
     public void InitializeNewTurn()
     {

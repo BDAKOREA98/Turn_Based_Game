@@ -8,18 +8,22 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
     BattleHex hex;
     public bool isTargetToMove = false;
     public FieldManager fieldManager;
+    BattleController battleController;
+
+
 
     void Awake()
     {
         hex = GetComponent<BattleHex>();
         fieldManager = FindObjectOfType<FieldManager>();
-       
+        battleController = FindObjectOfType<BattleController>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (hex.potencialTarget)
         {
+            battleController.events.gameObject.SetActive(false);
             BattleController.currentTarget = this.GetComponentInChildren<Hero>();
             BattleController.currentAttacker.HeroIsAttacking();
             return;

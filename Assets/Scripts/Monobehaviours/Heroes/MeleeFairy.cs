@@ -25,4 +25,8 @@ public class MeleeFairy : Hero
         base.HeroIsAttacking();
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
+    public override void HeroIsKilled()
+    {
+        base.HeroIsKilled();
+    }
 }

@@ -18,8 +18,9 @@ MonoBehaviour:
   atack: 1
   resistance: 1
   stack: 100
-  attackdistanse: 0
+  attackdistanse: 3
   isRanger: 1
   isFlying: 0
   heroSprite: {fileID: 21300000, guid: 4541c37022ef99847af4d91342d26dc2, type: 3}
   heroSO: {fileID: -722417810919440716, guid: ade72180fa092f546b947002ab92baac, type: 3}
+  isDeployed: 1

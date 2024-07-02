@@ -27,7 +27,7 @@ public class Distance : MonoBehaviour
         distanceFromStartingPoint = initialHex.distanceText.distanceFromStartingPoint
                     + initialHex.distanceText.stepsToGo;
    
-        DisplayDistanceText();
+       // DisplayDistanceText();
     }
     public void SetDistanceForFlyingUnit(BattleHex initialHex)
     {
@@ -37,14 +37,14 @@ public class Distance : MonoBehaviour
 
         distanceFromStartingPoint = initialHex.distanceText.distanceFromStartingPoint + stepsToGo;
        
-        DisplayDistanceText();
+      //  DisplayDistanceText();
     }
 
-    private void DisplayDistanceText()
-    {
-        distanceText.text = distanceFromStartingPoint.ToString();
-        distanceText.color = new Color32(255, 255, 255, 255);
-    }
+    //private void DisplayDistanceText()
+    //{
+    //    distanceText.text = distanceFromStartingPoint.ToString();
+    //    distanceText.color = new Color32(255, 255, 255, 255);
+    //}
 
     public bool EvaluateDistance(BattleHex initialHex)
     {

@@ -39,4 +39,8 @@ public class Archer : Hero
         DamagingFlyingObject Arrow = Instantiate(arrow, positionForArrow, rotation, transform);
         Arrow.FireArrow(dealsDamage);
     }
+    public override void HeroIsKilled()
+    {
+        base.HeroIsKilled();
+    }
 }

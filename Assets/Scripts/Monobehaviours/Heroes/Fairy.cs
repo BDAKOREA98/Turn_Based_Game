@@ -40,4 +40,8 @@ public class Fairy : Hero
         DamagingFlyingObject ball = Instantiate(mageBall, positionForArrow, rotation, transform);
         ball.FireArrow(dealsDamage);
     }
+    public override void HeroIsKilled()
+    {
+        base.HeroIsKilled();
+    }
 }

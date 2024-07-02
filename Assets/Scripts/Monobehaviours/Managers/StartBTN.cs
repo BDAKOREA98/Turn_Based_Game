@@ -44,7 +44,7 @@ public class StartBTN : MonoBehaviour
         int grayIcons = 0;
         foreach (CharIcon icon in storage.charIcons)
         {
-            if (icon.deployed)
+            if (icon.charAttributes.isDeployed)
             {
                 grayIcons++;
             }

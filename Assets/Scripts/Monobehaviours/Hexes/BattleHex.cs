@@ -95,5 +95,6 @@ public class BattleHex : MonoBehaviour
 
         distanceText.distanceFromStartingPoint = distanceText.defaoutDistance;
         distanceText.stepsToGo = distanceText.defaultstepsToGo;
+        potencialTarget = false;
     }
 }

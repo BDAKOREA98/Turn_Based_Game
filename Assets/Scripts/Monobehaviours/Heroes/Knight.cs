@@ -25,4 +25,8 @@ public override IAdjacentFinder GetTypeOfHero()
         base.HeroIsAttacking();
         GetComponent<Animator>().SetTrigger("isAttacking");
     }
+    public override void HeroIsKilled()
+    {
+        base.HeroIsKilled();
+    }
 }

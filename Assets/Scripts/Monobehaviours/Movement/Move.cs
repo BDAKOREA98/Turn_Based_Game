@@ -15,6 +15,10 @@ public class Move : MonoBehaviour
     internal bool lookingToTheRight = true;
     SpriteRenderer heroSprite;
     BattleController battleController;
+
+
+
+
     void Start()
     {
         hero = GetComponent<Hero>();
@@ -29,6 +33,7 @@ public class Move : MonoBehaviour
     }
     public void StartsMoving()
     {
+        battleController.events.gameObject.SetActive(false);
         battleController.CleanField();
         currentStep = 0;
         totalSteps = path.Count - 1;
@@ -71,6 +76,7 @@ public class Move : MonoBehaviour
         hero.GetComponent<Animator>().SetBool("IsMoving", false);
         hero.heroData.CurrentVelocity = 0;
         hero.DefineTargets();
+        battleController.events.gameObject.SetActive(true);
 
     }
     internal void ControlDirection(Vector3 targetPos)

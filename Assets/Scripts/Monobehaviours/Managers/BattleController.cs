@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BattleController : MonoBehaviour
 {
@@ -14,13 +15,20 @@ public class BattleController : MonoBehaviour
 
     Turn turn;
 
+    public EventSystem events;
+
+
      void Start()
     {
         turn = GetComponent<Turn>();
+
+        events = FindObjectOfType<EventSystem>();
+
     }
 
     public List<Hero> DefineAllFighters()
     {
+    
         allFighters = FindObjectsOfType<Hero>().ToList();
         return allFighters;
     }
@@ -45,11 +53,12 @@ public class BattleController : MonoBehaviour
     {
         Destroy(hero.gameObject);
         print(hero.gameObject.name + " is killed");
-       // turn.TurnIsCompleted();
+        turn.TurnIsCompleted();
     }
 
     public List<BattleHex> IsLookingForPotentialTargets()
     {
+       
         potencialTargets.Clear();
 
         foreach (BattleHex hex in FieldManager.activeHexList)

@@ -15,7 +15,7 @@ MonoBehaviour:
   velocity: 2
   initiative: 5
   hp: 25
-  atack: 10
+  atack: 1
   resistance: 3
   stack: 40
   attackdistanse: 0
@@ -23,3 +23,4 @@ MonoBehaviour:
   isFlying: 0
   heroSprite: {fileID: 21300000, guid: 3361c58d9e5019e4ba31fecd30dfb76e, type: 3}
   heroSO: {fileID: -5002286797929634964, guid: 708661c60d236ba4092747e18f983107, type: 3}
+  isDeployed: 1
